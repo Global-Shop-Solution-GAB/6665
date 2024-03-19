@@ -1,0 +1,880 @@
+Program.Sub.ScreenSU.Start
+Gui.FmTest..Create
+Gui.FmTest..Caption("Job Testing")
+Gui.FmTest..Size(9885,7890)
+Gui.FmTest..MinX(0)
+Gui.FmTest..MinY(0)
+Gui.FmTest..Position(0,0)
+Gui.FmTest..BackColor(-2147483633)
+Gui.FmTest..MousePointer(0)
+Gui.FmTest..MaxButton(False)
+Gui.FmTest..Sizeable(False)
+Gui.FmTest..Event(UnLoad,FmTest_UnLoad)
+Gui.FmTest.frmFllwDwn.Create(Frame)
+Gui.FmTest.frmFllwDwn.Size(9600,6675)
+Gui.FmTest.frmFllwDwn.Position(90,645)
+Gui.FmTest.frmFllwDwn.Enabled(False)
+Gui.FmTest.frmFllwDwn.Visible(False)
+Gui.FmTest.lbl1.Create(Label,"Customer",True,810,255,0,4515,270,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl1.Parent("frmFllwDwn")
+Gui.FmTest.txtPartFD.Create(TextBox,"",True,1605,300,0,1230,2760,True,0,"Arial",8,-2147483643,1)
+Gui.FmTest.txtPartFD.Parent("frmFllwDwn")
+Gui.FmTest.txtPartFD.TabStop(True)
+Gui.FmTest.txtPartFD.TabIndex(2)
+Gui.FmTest.cmdStartFllwDwn.Create(Button)
+Gui.FmTest.cmdStartFllwDwn.Size(1605,375)
+Gui.FmTest.cmdStartFllwDwn.Position(4110,5235)
+Gui.FmTest.cmdStartFllwDwn.Parent("frmFllwDwn")
+Gui.FmTest.cmdStartFllwDwn.Caption("Prepare Test")
+Gui.FmTest.cmdStartFllwDwn.Event(Click,cmdStartFllwDwn_Click)
+Gui.FmTest.cmdStartFllwDwn.TabStop(True)
+Gui.FmTest.cmdStartFllwDwn.TabIndex(15)
+Gui.FmTest.lbl2.Create(Label,"Date",True,450,255,0,4695,1035,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl2.Parent("frmFllwDwn")
+Gui.FmTest.lbl3.Create(Label,"01/01/1900",True,990,255,0,4425,1335,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl3.Parent("frmFllwDwn")
+Gui.FmTest.lbl3.FontStyle(True,False,False,False,False)
+Gui.FmTest.lbl4.Create(Label,"Work Order Example: 987654-000",True,2655,255,0,180,1845,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl4.Parent("frmFllwDwn")
+Gui.FmTest.lbl5.Create(Label,"Fine Feed (Dia.):",True,1320,255,0,6540,3345,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl5.Parent("frmFllwDwn")
+Gui.FmTest.lbl6.Create(Label,"Course Feed Rate:",True,1470,255,0,6390,2835,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl6.Parent("frmFllwDwn")
+Gui.FmTest.lbl7.Create(Label,"Course Feed (Dia.):",True,1545,255,0,6315,2340,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl7.Parent("frmFllwDwn")
+Gui.FmTest.lbl8.Create(Label,"Stock Dia:",True,855,255,0,7005,1845,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl8.Parent("frmFllwDwn")
+Gui.FmTest.lbl9.Create(Label,"Headstock RPM:",True,1290,255,0,3270,3840,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl9.Parent("frmFllwDwn")
+Gui.FmTest.lbl10.Create(Label,"Wheel Dia:",True,900,255,0,3660,3345,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl10.Parent("frmFllwDwn")
+Gui.FmTest.lbl11.Create(Label,"Run-in Time:",True,1095,255,0,3465,2835,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl11.Parent("frmFllwDwn")
+Gui.FmTest.lbl12.Create(Label,"Min. Pressure (PSI):",True,1590,255,0,2970,2340,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl12.Parent("frmFllwDwn")
+Gui.FmTest.lbl13.Create(Label,"Testing Pressure:",True,1395,255,0,3165,1845,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl13.Parent("frmFllwDwn")
+Gui.FmTest.lbl14.Create(Label,"Operator:",True,855,255,0,360,3840,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl14.Parent("frmFllwDwn")
+Gui.FmTest.lbl15.Create(Label,"Serial #:",True,720,255,0,495,3345,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl15.Parent("frmFllwDwn")
+Gui.FmTest.lbl16.Create(Label,"Model #:",True,750,255,0,465,2835,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl16.Parent("frmFllwDwn")
+Gui.FmTest.lbl17.Create(Label,"Work Order:",True,1035,255,0,180,2340,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl17.Parent("frmFllwDwn")
+Gui.FmTest.cmdExitFllwDwn.Create(Button)
+Gui.FmTest.cmdExitFllwDwn.Size(1605,375)
+Gui.FmTest.cmdExitFllwDwn.Position(4110,5775)
+Gui.FmTest.cmdExitFllwDwn.Parent("frmFllwDwn")
+Gui.FmTest.cmdExitFllwDwn.Caption("Exit")
+Gui.FmTest.cmdExitFllwDwn.Event(Click,cmdExitFllwDwn_Click)
+Gui.FmTest.cmdExitFllwDwn.TabStop(True)
+Gui.FmTest.cmdExitFllwDwn.TabIndex(16)
+Gui.FmTest.lbl18.Create(Label,"Fine Feed Rate:",True,1260,255,0,6600,3840,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl18.Parent("frmFllwDwn")
+Gui.FmTest.ddlSerialFD.Create(DropDownList)
+Gui.FmTest.ddlSerialFD.Size(1605,330)
+Gui.FmTest.ddlSerialFD.Position(1230,3240)
+Gui.FmTest.ddlSerialFD.Parent("frmFllwDwn")
+Gui.FmTest.ddlSerialFD.TabStop(True)
+Gui.FmTest.ddlSerialFD.TabIndex(3)
+Gui.FmTest.ddlTPFD.Create(DropDownList)
+Gui.FmTest.ddlTPFD.Size(1605,330)
+Gui.FmTest.ddlTPFD.Position(4575,1755)
+Gui.FmTest.ddlTPFD.Parent("frmFllwDwn")
+Gui.FmTest.ddlTPFD.TabStop(True)
+Gui.FmTest.ddlTPFD.TabIndex(5)
+Gui.FmTest.ddlMinPFD.Create(DropDownList)
+Gui.FmTest.ddlMinPFD.Size(1605,330)
+Gui.FmTest.ddlMinPFD.Position(4575,2250)
+Gui.FmTest.ddlMinPFD.Parent("frmFllwDwn")
+Gui.FmTest.ddlMinPFD.TabStop(True)
+Gui.FmTest.ddlMinPFD.TabIndex(6)
+Gui.FmTest.ddlRTFD.Create(DropDownList)
+Gui.FmTest.ddlRTFD.Size(1605,330)
+Gui.FmTest.ddlRTFD.Position(4575,2745)
+Gui.FmTest.ddlRTFD.Parent("frmFllwDwn")
+Gui.FmTest.ddlRTFD.TabStop(True)
+Gui.FmTest.ddlRTFD.TabIndex(7)
+Gui.FmTest.ddlWDFD.Create(DropDownList)
+Gui.FmTest.ddlWDFD.Size(1605,330)
+Gui.FmTest.ddlWDFD.Position(4575,3240)
+Gui.FmTest.ddlWDFD.Parent("frmFllwDwn")
+Gui.FmTest.ddlWDFD.TabStop(True)
+Gui.FmTest.ddlWDFD.TabIndex(8)
+Gui.FmTest.txtHRPMFD.Create(TextBox,"120",True,1605,300,0,4575,3750,True,1,"Arial",8,-2147483643,1)
+Gui.FmTest.txtHRPMFD.Parent("frmFllwDwn")
+Gui.FmTest.txtHRPMFD.TabStop(True)
+Gui.FmTest.txtHRPMFD.TabIndex(9)
+Gui.FmTest.txtSDFD.Create(TextBox,"",True,1605,300,0,7875,1770,True,1,"Arial",8,-2147483643,1)
+Gui.FmTest.txtSDFD.Parent("frmFllwDwn")
+Gui.FmTest.txtSDFD.TabStop(True)
+Gui.FmTest.txtSDFD.TabIndex(10)
+Gui.FmTest.txtCFDFD.Create(TextBox,"0.01",True,1605,300,0,7875,2265,True,1,"Arial",8,-2147483643,1)
+Gui.FmTest.txtCFDFD.Parent("frmFllwDwn")
+Gui.FmTest.txtCFDFD.TabStop(True)
+Gui.FmTest.txtCFDFD.TabIndex(11)
+Gui.FmTest.txtCFRFD.Create(TextBox,"0.003",True,1605,300,0,7875,2760,True,1,"Arial",8,-2147483643,1)
+Gui.FmTest.txtCFRFD.Parent("frmFllwDwn")
+Gui.FmTest.txtCFRFD.TabStop(True)
+Gui.FmTest.txtCFRFD.TabIndex(12)
+Gui.FmTest.txtFFDFD.Create(TextBox,"0.005",True,1605,300,0,7875,3255,True,1,"Arial",8,-2147483643,1)
+Gui.FmTest.txtFFDFD.Parent("frmFllwDwn")
+Gui.FmTest.txtFFDFD.TabStop(True)
+Gui.FmTest.txtFFDFD.TabIndex(13)
+Gui.FmTest.txtFFRFD.Create(TextBox,"0.003",True,1605,300,0,7875,3750,True,1,"Arial",8,-2147483643,1)
+Gui.FmTest.txtFFRFD.Parent("frmFllwDwn")
+Gui.FmTest.txtFFRFD.TabStop(True)
+Gui.FmTest.txtFFRFD.TabIndex(14)
+Gui.FmTest.txtJobFD.Create(TextBox,"",True,1605,300,0,1230,2250,True,0,"Arial",8,-2147483643,1)
+Gui.FmTest.txtJobFD.Parent("frmFllwDwn")
+Gui.FmTest.txtJobFD.TabStop(True)
+Gui.FmTest.txtJobFD.TabIndex(9)
+Gui.FmTest.txtJobFD.Locked(True)
+Gui.FmTest.txtOpFD.Create(TextBox,"",True,1605,300,0,1230,3750,True,0,"Arial",8,-2147483643,1)
+Gui.FmTest.txtOpFD.Parent("frmFllwDwn")
+Gui.FmTest.txtOpFD.TabStop(True)
+Gui.FmTest.txtOpFD.TabIndex(9)
+Gui.FmTest.txtOpFD.Locked(True)
+Gui.FmTest.txtCustFD.Create(TextBox,"",True,7140,300,0,1350,570,True,0,"Arial",8,-2147483643,1)
+Gui.FmTest.txtCustFD.Parent("frmFllwDwn")
+Gui.FmTest.txtCustFD.TabStop(True)
+Gui.FmTest.txtCustFD.TabIndex(9)
+Gui.FmTest.txtCustFD.Locked(True)
+Gui.FmTest.cmdCustFDBrw.Create(Button)
+Gui.FmTest.cmdCustFDBrw.Size(375,375)
+Gui.FmTest.cmdCustFDBrw.Position(8565,525)
+Gui.FmTest.cmdCustFDBrw.Parent("frmFllwDwn")
+Gui.FmTest.cmdCustFDBrw.Caption("Browse")
+Gui.FmTest.cmdCustFDBrw.Event(Click,cmdCustFDBrw_Click)
+Gui.FmTest.frmRepeat.Create(Frame)
+Gui.FmTest.frmRepeat.Size(9600,6675)
+Gui.FmTest.frmRepeat.Position(90,645)
+Gui.FmTest.frmRepeat.Enabled(False)
+Gui.FmTest.frmRepeat.Visible(False)
+Gui.FmTest.cmdStartRepeat.Create(Button)
+Gui.FmTest.cmdStartRepeat.Size(1605,375)
+Gui.FmTest.cmdStartRepeat.Position(4020,4035)
+Gui.FmTest.cmdStartRepeat.Parent("frmRepeat")
+Gui.FmTest.cmdStartRepeat.Caption("Prepare Test")
+Gui.FmTest.cmdStartRepeat.Event(Click,cmdStartRepeat_Click)
+Gui.FmTest.cmdStartRepeat.TabStop(True)
+Gui.FmTest.cmdStartRepeat.TabIndex(7)
+Gui.FmTest.txtPartRepeat.Create(TextBox,"",True,1605,300,0,4020,1815,True,0,"Arial",8,-2147483643,1)
+Gui.FmTest.txtPartRepeat.Parent("frmRepeat")
+Gui.FmTest.txtPartRepeat.TabStop(True)
+Gui.FmTest.txtPartRepeat.TabIndex(3)
+Gui.FmTest.dtpDateRepeat.Create(DatePicker)
+Gui.FmTest.dtpDateRepeat.Size(1605,285)
+Gui.FmTest.dtpDateRepeat.Position(4020,2775)
+Gui.FmTest.dtpDateRepeat.Parent("frmRepeat")
+Gui.FmTest.dtpDateRepeat.TabStop(True)
+Gui.FmTest.dtpDateRepeat.TabIndex(5)
+Gui.FmTest.lbl19.Create(Label,"Customer Name",True,1260,255,0,4200,210,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl19.Parent("frmRepeat")
+Gui.FmTest.cmdExitRepeat.Create(Button)
+Gui.FmTest.cmdExitRepeat.Size(1605,375)
+Gui.FmTest.cmdExitRepeat.Position(4020,4575)
+Gui.FmTest.cmdExitRepeat.Parent("frmRepeat")
+Gui.FmTest.cmdExitRepeat.Caption("Exit")
+Gui.FmTest.cmdExitRepeat.Event(Click,cmdExitRepeat_Click)
+Gui.FmTest.cmdExitRepeat.TabStop(True)
+Gui.FmTest.cmdExitRepeat.TabIndex(8)
+Gui.FmTest.ddlSerialRepeat.Create(DropDownList)
+Gui.FmTest.ddlSerialRepeat.Size(1605,330)
+Gui.FmTest.ddlSerialRepeat.Position(4020,2280)
+Gui.FmTest.ddlSerialRepeat.Parent("frmRepeat")
+Gui.FmTest.ddlSerialRepeat.TabStop(True)
+Gui.FmTest.ddlSerialRepeat.TabIndex(4)
+Gui.FmTest.lbl20.Create(Label,"Operator:",True,810,255,0,3180,3345,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl20.Parent("frmRepeat")
+Gui.FmTest.lbl21.Create(Label,"Date:",True,495,255,0,3495,2865,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl21.Parent("frmRepeat")
+Gui.FmTest.lbl22.Create(Label,"Serial #:",True,705,255,0,3285,2385,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl22.Parent("frmRepeat")
+Gui.FmTest.lbl23.Create(Label,"Model #:",True,720,255,0,3270,1905,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl23.Parent("frmRepeat")
+Gui.FmTest.lbl24.Create(Label,"Work Order:",True,1020,255,0,2970,1425,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl24.Parent("frmRepeat")
+Gui.FmTest.lbl25.Create(Label,"(Example: 123456-000)",True,1935,255,0,5775,1425,True,0,"Arial",8,-2147483633,0)
+Gui.FmTest.lbl25.Parent("frmRepeat")
+Gui.FmTest.txtJobRepeat.Create(TextBox,"",True,1605,300,0,4005,1365,True,0,"Arial",8,-2147483643,1)
+Gui.FmTest.txtJobRepeat.Parent("frmRepeat")
+Gui.FmTest.txtJobRepeat.TabStop(True)
+Gui.FmTest.txtJobRepeat.TabIndex(3)
+Gui.FmTest.txtJobRepeat.Locked(True)
+Gui.FmTest.txtOpRepeat.Create(TextBox,"",True,1605,300,0,4020,3285,True,0,"Arial",8,-2147483643,1)
+Gui.FmTest.txtOpRepeat.Parent("frmRepeat")
+Gui.FmTest.txtOpRepeat.TabStop(True)
+Gui.FmTest.txtOpRepeat.TabIndex(3)
+Gui.FmTest.txtOpRepeat.Locked(True)
+Gui.FmTest.txtCustRepeat.Create(TextBox,"",True,7140,300,0,1260,615,True,0,"Arial",8,-2147483643,1)
+Gui.FmTest.txtCustRepeat.Parent("frmRepeat")
+Gui.FmTest.txtCustRepeat.TabStop(True)
+Gui.FmTest.txtCustRepeat.TabIndex(9)
+Gui.FmTest.txtCustRepeat.Locked(True)
+Gui.FmTest.cmdCustRepeatBrw.Create(Button)
+Gui.FmTest.cmdCustRepeatBrw.Size(375,375)
+Gui.FmTest.cmdCustRepeatBrw.Position(8490,570)
+Gui.FmTest.cmdCustRepeatBrw.Parent("frmRepeat")
+Gui.FmTest.cmdCustRepeatBrw.Caption("Browse")
+Gui.FmTest.cmdCustRepeatBrw.Event(Click,cmdCustRepeatBrw_Click)
+Gui.FmTest.frmTitle.Create(Frame)
+Gui.FmTest.frmTitle.Size(9600,585)
+Gui.FmTest.frmTitle.Position(90,30)
+Gui.FmTest.frmTitle.BackColor(-2147483638)
+Gui.FmTest.lblTitle.Create(Label,"Testing Title",True,9540,510,0,0,90,True,2,"Arial",18,-2147483638,0)
+Gui.FmTest.lblTitle.Parent("frmTitle")
+Gui.FmTest.lblTitle.FontStyle(True,False,False,False,False)
+Gui.fmSelect..Create
+Gui.fmSelect..Caption("Select Test Type:")
+Gui.fmSelect..Size(4200,1485)
+Gui.fmSelect..MinX(0)
+Gui.fmSelect..MinY(0)
+Gui.fmSelect..Position(0,0)
+Gui.fmSelect..BackColor(-2147483633)
+Gui.fmSelect..MaxButton(False)
+Gui.fmSelect..MinButton(False)
+Gui.fmSelect..MousePointer(0)
+Gui.fmSelect..Event(UnLoad,fmSelect_UnLoad)
+Gui.fmSelect..Sizeable(False)
+Gui.fmSelect.ddlSelect.Create(DropDownList)
+Gui.fmSelect.ddlSelect.Size(3915,330)
+Gui.fmSelect.ddlSelect.Position(135,165)
+Gui.fmSelect.cmdOk.Create(Button)
+Gui.fmSelect.cmdOk.Size(855,375)
+Gui.fmSelect.cmdOk.Position(3195,585)
+Gui.fmSelect.cmdOk.Caption("Ok")
+Gui.fmSelect.cmdOk.FontStyle(True,False,False,False,False)
+Gui.fmSelect.cmdOk.Event(Click,cmdOk_Click)
+Gui.fmMtx..Create
+Gui.fmMtx..Caption("Macro-enabled Testing .xlsm Paths")
+Gui.fmMtx..Size(7665,3720)
+Gui.fmMtx..MinX(0)
+Gui.fmMtx..MinY(0)
+Gui.fmMtx..Position(0,0)
+Gui.fmMtx..BackColor(-2147483633)
+Gui.fmMtx..MaxButton(False)
+Gui.fmMtx..MinButton(False)
+Gui.fmMtx..MousePointer(0)
+Gui.fmMtx..Event(UnLoad,fmMtx_UnLoad)
+Gui.fmMtx.txtFDFile.Create(TextBox,"",True,6915,300,0,105,345,True,0,"Arial",8,-2147483643,1)
+Gui.fmMtx.txtFDFile.Locked(True)
+Gui.fmMtx.cmdFDBrw.Create(Button)
+Gui.fmMtx.cmdFDBrw.Size(375,375)
+Gui.fmMtx.cmdFDBrw.Position(7110,300)
+Gui.fmMtx.cmdFDBrw.Caption("Browse")
+Gui.fmMtx.cmdFDBrw.Event(Click,cmdFDBrw_Click)
+Gui.fmMtx.txtRPFile.Create(TextBox,"",True,6915,300,0,105,1695,True,0,"Arial",8,-2147483643,1)
+Gui.fmMtx.txtRPFile.Locked(True)
+Gui.fmMtx.cmdRPBrw.Create(Button)
+Gui.fmMtx.cmdRPBrw.Size(375,375)
+Gui.fmMtx.cmdRPBrw.Position(7110,1650)
+Gui.fmMtx.cmdRPBrw.Caption("Browse")
+Gui.fmMtx.cmdRPBrw.Event(Click,cmdRPBrw_Click)
+Gui.fmMtx.cmdFPSave.Create(Button)
+Gui.fmMtx.cmdFPSave.Size(855,375)
+Gui.fmMtx.cmdFPSave.Position(6630,2805)
+Gui.fmMtx.cmdFPSave.Caption("Save")
+Gui.fmMtx.cmdFPSave.Event(Click,cmdFPSave_Click)
+Gui.fmMtx.lbl1.Create(Label,"Follow-down Testing .xlsm",True,6900,255,0,105,120,True,0,"Arial",8,-2147483633,0)
+Gui.fmMtx.lbl1.FontStyle(True,False,False,False,False)
+Gui.fmMtx.lbl2.Create(Label,"Repeatability Testing .xlsm",True,6900,255,0,105,1470,True,0,"Arial",8,-2147483633,0)
+Gui.fmMtx.lbl2.FontStyle(True,False,False,False,False)
+Gui.fmMtx.txtRPTFile.Create(TextBox,"",True,6915,300,0,105,2355,True,0,"Arial",8,-2147483643,1)
+Gui.fmMtx.txtRPTFile.Locked(True)
+Gui.fmMtx.txtFDTFile.Create(TextBox,"",True,6915,300,0,105,1005,True,0,"Arial",8,-2147483643,1)
+Gui.fmMtx.txtFDTFile.Locked(True)
+Gui.fmMtx.lbl3.Create(Label,"Follow-down .xlsx Template",True,6900,255,0,105,765,True,0,"Arial",8,-2147483633,0)
+Gui.fmMtx.lbl4.Create(Label,"Repeatability .xlsx Template",True,6900,255,0,105,2130,True,0,"Arial",8,-2147483633,0)
+Gui.fmMtx.cmdFDTBrw.Create(Button)
+Gui.fmMtx.cmdFDTBrw.Size(375,375)
+Gui.fmMtx.cmdFDTBrw.Position(7110,960)
+Gui.fmMtx.cmdFDTBrw.Caption("Browse")
+Gui.fmMtx.cmdFDTBrw.Event(Click,cmdFDTBrw_Click)
+Gui.fmMtx.cmdRPTBrw.Create(Button)
+Gui.fmMtx.cmdRPTBrw.Size(375,375)
+Gui.fmMtx.cmdRPTBrw.Position(7110,2310)
+Gui.fmMtx.cmdRPTBrw.Caption("Browse")
+Gui.fmMtx.cmdRPTBrw.Event(Click,cmdRPTBrw_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.sFDFile.Declare
+v.Global.sRPFile.Declare
+v.Global.sFDTFile.Declare
+v.Global.sRPTFile.Declare
+v.Global.sEmpID.Declare
+v.Global.sEmpName.Declare
+v.Global.sJob.Declare
+v.Global.sSuffix.Declare
+v.Global.sPart.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.iBDFRow.Declare
+v.Local.iRow.Declare
+v.Local.sBDF.Declare
+
+'GET FILE PATHS FOR REQUIRED WORKBOOKS FROM REGISTRY
+f.Global.Registry.ReadValue("",v.Caller.CompanyCode,"GCG_6665",6665,1000,5,"",v.Global.sFDFile)
+f.Global.Registry.ReadValue("",v.Caller.CompanyCode,"GCG_6665",6665,2000,5,"",v.Global.sRPFile)
+f.Global.Registry.ReadValue("",v.Caller.CompanyCode,"GCG_6665",6665,3000,5,"",v.Global.sFDTFile)
+f.Global.Registry.ReadValue("",v.Caller.CompanyCode,"GCG_6665",6665,4000,5,"",v.Global.sRPTFile)
+
+f.Intrinsic.Control.SelectCase(v.Caller.Hook)
+
+'CHANGE GUI/SFDC BUTTONS WHEN POPULATED
+	f.Intrinsic.Control.Case("15790")
+	v.Passed.000048.Set("Testing")
+	f.Intrinsic.Control.End
+	
+	f.Intrinsic.Control.Case("49710")
+	V.Passed.MainFormView-windowsUIButtonPanel-2.Set("Script3|~|Script2|~|Testing")
+	F.Intrinsic.Control.End
+	
+	f.Intrinsic.Control.Case("50500")
+	V.Passed.MainFormView-windowsUIButtonPanel-4.Set("Script3|~|Script2|~|Testing")
+	F.Intrinsic.Control.End
+
+'GET REQUIRED PASSED VALUES FROM GUI/SFDC
+	f.Intrinsic.Control.Case("15832")
+	v.Global.sEmpID.Set(v.Passed.009993)
+	v.Global.sEmpName.Set(v.Passed.009994)
+	v.Global.sJob.Set(v.Passed.009990)
+	v.Global.sSuffix.Set(v.Passed.009991)
+	
+	f.Intrinsic.Control.Case("50502")
+	f.Intrinsic.BDF.Load("MainFormView-gridViewOperations-bdf","MainFormView-gridViewOperations-bdf")
+	
+	f.Intrinsic.BDF.SeekRow("MainFormView-gridViewOperations-bdf",0,0,"True",v.Local.iRow)
+	f.Intrinsic.BDF.ReadRow("MainFormView-gridViewOperations-bdf",v.Local.iRow,v.Local.sBDF)
+	
+	f.Intrinsic.String.Split(v.Local.sBDF,"|~|",v.Local.sBDF)
+	f.Intrinsic.String.Split(v.Local.sBDF(2),"-",v.Local.sBDF)
+	
+	v.Global.sEmpID.Set(v.Passed.Employee)
+	v.Global.sEmpName.Set(v.Passed.EmployeeName)
+	v.Global.sJob.Set(v.Local.sBDF(0).Trim)
+	v.Global.sSuffix.Set(v.Local.sBDF(1).Trim)
+	
+f.Intrinsic.Control.EndSelect
+
+'OPENS MAINTENANCE SCREEN WHEN FIRED FROM GSMENU
+f.Intrinsic.Control.If(v.Caller.Switches,=,"M")
+
+	gui.fmMtx.txtFDFile.Text(v.Global.sFDFile)
+	gui.fmMtx.txtRPFile.Text(v.Global.sRPFile)
+	gui.fmMtx.txtFDTFile.Text(v.Global.sFDTFile)
+	gui.fmMtx.txtRPTFile.Text(v.Global.sRPTFile)
+	
+	gui.fmMtx..Visible(true)
+
+f.Intrinsic.Control.Else
+
+'OPENS TEST SELECTION SCREEN WHEN FIRED FROM GUI
+	gui.fmSelect.ddlSelect.AddItem("Repeatability")
+	gui.fmSelect.ddlSelect.AddItem("Follow-Down")
+	
+	gui.fmSelect.ddlSelect.Text("Follow-Down")
+	
+	gui.fmSelect..Visible(true)
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.fmSelect_UnLoad.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+gui.fmSelect..Visible(false)
+
+f.Intrinsic.Control.End
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.fmSelect_UnLoad.End
+
+Program.Sub.FmTest_UnLoad.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+gui.FmTest..Visible(false)
+
+f.Intrinsic.Control.End
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.FmTest_UnLoad.End
+
+Program.Sub.cmdOk_Click.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+'DISPLAY APPROPRIATE TESTING SCREEN BASED ON USER SELECTION
+f.Intrinsic.Control.SelectCase(v.Screen.fmSelect!ddlSelect.Text)
+
+f.Intrinsic.Control.Case("Repeatability")
+	f.Intrinsic.Control.CallSub("Data_Load","Test","RP")
+	gui.FmTest.lblTitle.Caption("Steady Rest Repeatability Testing")
+	gui.FmTest.lblTitle.Position(1800,90)
+	gui.FmTest.lblTitle.ForeColor("Black")
+	gui.FmTest.lblTitle.BackColor(-2147483638)
+	gui.FmTest.frmTitle.BackColor(-2147483638)
+	gui.FmTest.frmRepeat.Visible(true)
+	gui.FmTest.frmRepeat.Enabled(true)
+	gui.FmTest.frmFllwDwn.Visible(false)
+	gui.FmTest.frmFllwDwn.Enabled(false)
+
+f.Intrinsic.Control.Case("Follow-Down")
+	f.Intrinsic.Control.CallSub("Data_Load","Test","FD")
+	gui.FmTest.lblTitle.Caption("Steady Rest Follow-Down Testing")
+	gui.FmTest.lblTitle.Position(1800,90)
+	gui.FmTest.lblTitle.ForeColor("Black")
+	gui.FmTest.lblTitle.BackColor(-2147483638)
+	gui.FmTest.frmTitle.BackColor(-2147483638)
+	gui.FmTest.frmRepeat.Visible(false)
+	gui.FmTest.frmRepeat.Enabled(false)
+	gui.FmTest.frmFllwDwn.Visible(true)
+	gui.FmTest.frmFllwDwn.Enabled(true)
+	
+f.Intrinsic.Control.EndSelect
+
+gui.fmSelect..Visible(false)
+gui.FmTest..Visible(true)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdOk_Click.End
+
+Program.Sub.cmdExitFllwDwn_Click.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+f.Intrinsic.Control.CallSub(FmTest_Unload)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdExitFllwDwn_Click.End
+
+Program.Sub.cmdStartFllwDwn_Click.Start
+'CREATE EXCEL FILE FOR FOLLOW DOWN TESTING BASED ON USER INPUTS
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sDate.Declare
+v.Local.sFP.Declare
+v.Local.sXLSX.Declare
+
+gui.FmTest..Enabled(false)
+
+f.Intrinsic.UI.InvokeWaitDialog("Please wait...Preparing test...","Loading...")
+
+f.Intrinsic.String.Format(v.Ambient.Date,"MMDDYYYY",v.Local.sDate)
+'f.Intrinsic.String.Build("{0}{1}_{2}.xlsx",v.Caller.LocalGSSTempDir,v.Screen.FmTest!ddlJobFD.Text,v.Local.sDate,v.Local.sFP)
+f.Intrinsic.String.Build("Serial#*!*{0}$!$Model No*!*{1}$!$Customer*!*{2}$!$Work Order*!*{3}$!$Operator*!*{4}$!$Date*!*{5}$!$Testing Pressure*!*{6}$!$Min Pressure*!*{7}$!$Run-in Time*!*{8}$!$Wheel Dia*!*{9}$!$Headstock RPM*!*{10}$!$Stock Dia*!*{11}$!$Course Feed (Dia)*!*{12}$!$Course Feed Rate*!*{13}$!$Fine Feed (Dia)*!*{14}$!$Fine Feed Rate*!*{15}",v.Screen.FmTest!ddlSerialFD.Text,v.Screen.FmTest!txtPartFD.Text,v.Screen.FmTest!txtCustFD.Text,v.Screen.FmTest!txtJobFD.Text,v.Global.sEmpName,v.Ambient.Date,v.Screen.FmTest!ddlTPFD.Text,v.Screen.FmTest!ddlMinPFD.Text,v.Screen.FmTest!ddlRTFD.Text,v.Screen.FmTest!ddlWDFD.Text,v.Screen.FmTest!txtHRPMFD.Text,v.Screen.FmTest!txtSDFD.Text,v.Screen.FmTest!txtCFDFD.Text,v.Screen.FmTest!txtCFRFD.Text,v.Screen.FmTest!txtFFDFD.Text,v.Screen.FmTest!txtFFRFD.Text,v.Local.sXLSX)
+'f.Automation.MSExcel.WriteSpreadsheet(v.Global.sFDTFile,v.Global.sFDTFile,v.Local.sXLSX)
+f.Automation.MSExcel.WriteSpreadsheet(v.Global.sFDTFile,v.Local.sXLSX)
+
+f.Intrinsic.UI.CloseWaitDialog
+
+f.Intrinsic.UI.Msgbox("Data Export Successful","SUCCESS!")
+
+gui.FmTest..Enabled(true)
+'f.Intrinsic.Task.ShellExecSync(v.Caller.Handle,"Open",v.Global.sFDFile,"","",1)
+'f.Intrinsic.Task.ShellExec("Open","Open",v.Local.sFP,"","",1)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdStartFllwDwn_Click.End
+
+Program.Sub.cmdExitRepeat_Click.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+f.Intrinsic.Control.CallSub(FmTest_Unload)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdExitRepeat_Click.End
+
+Program.Sub.cmdStartRepeat_Click.Start
+'CREATE EXCEL FILE FOR REPEATABILITY TESTING BASED ON USER INPUTS
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sDate.Declare
+v.Local.sFP.Declare
+v.Local.sXLSX.Declare
+v.Local.iRet.Declare
+
+gui.FmTest..Enabled(false)
+
+f.Intrinsic.UI.InvokeWaitDialog("Please wait...Preparing test...","Loading...")
+
+f.Intrinsic.String.Format(v.Ambient.Date,"MMDDYYYY",v.Local.sDate)
+'f.Intrinsic.String.Build("{0}{1}_{2}.xlsx",v.Caller.LocalGSSTempDir,v.Screen.FmTest!ddlJobFD.Text,v.Local.sDate,v.Local.sFP)
+f.Intrinsic.String.Build("Model No*!*{0}$!$Customer*!*{1}$!$Work Order*!*{2}$!$Operator*!*{3}$!$Serial#*!*{4}",v.Screen.FmTest!txtPartRepeat.Text,v.Screen.FmTest!txtCustRepeat.Text,v.Screen.FmTest!txtJobRepeat.Text,v.Global.sEmpName,v.Screen.FmTest!ddlSerialRepeat.Text,v.Local.sXLSX)
+'f.Automation.MSExcel.WriteSpreadsheet(v.Global.sRPTFile,v.Global.sRPTFile,v.Local.sXLSX)
+f.Automation.MSExcel.WriteSpreadsheet(v.Global.sRPTFile,v.Local.sXLSX)
+
+f.Intrinsic.UI.CloseWaitDialog
+
+f.Intrinsic.UI.Msgbox("Data Export Successful","SUCCESS!")
+
+gui.FmTest..Enabled(true)
+'f.Intrinsic.Task.ShellExecSync(v.Caller.Handle,"Open",v.Global.sRPFile,"","",1)
+'f.Intrinsic.Task.ShellExec("Open","Open",v.Local.sFP,"","",1)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdStartRepeat_Click.End
+
+Program.Sub.fmMtx_UnLoad.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+gui.fmMtx..Visible(false)
+
+f.Intrinsic.Control.End
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.fmMtx_UnLoad.End
+
+Program.Sub.cmdFDBrw_Click.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sFile.Declare
+
+f.Intrinsic.UI.ShowOpenFileDialog("","","",v.Local.sFile)
+f.Intrinsic.Control.If(v.Local.sFile,<>,"***CANCEL***")
+
+	gui.fmMtx.txtFDFile.Text(v.Local.sFile)
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdFDBrw_Click.End
+
+Program.Sub.cmdRPBrw_Click.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sFile.Declare
+
+f.Intrinsic.UI.ShowOpenFileDialog("","","",v.Local.sFile)
+f.Intrinsic.Control.If(v.Local.sFile,<>,"***CANCEL***")
+
+	gui.fmMtx.txtRPFile.Text(v.Local.sFile)
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdRPBrw_Click.End
+
+Program.Sub.cmdFPSave_Click.Start
+'SAVE VALUES FOR SELECTED FILE PATHS TO REGISTRY
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+f.Global.Registry.AddValue("",v.Caller.CompanyCode,"GCG_6665",6665,1000,false,v.Screen.fmMtx!txtFDFile.Text,false,0,0,v.Ambient.Date,v.Ambient.Time)
+f.Global.Registry.AddValue("",v.Caller.CompanyCode,"GCG_6665",6665,2000,false,v.Screen.fmMtx!txtRPFile.Text,false,0,0,v.Ambient.Date,v.Ambient.Time)
+f.Global.Registry.AddValue("",v.Caller.CompanyCode,"GCG_6665",6665,3000,false,v.Screen.fmMtx!txtFDTFile.Text,false,0,0,v.Ambient.Date,v.Ambient.Time)
+f.Global.Registry.AddValue("",v.Caller.CompanyCode,"GCG_6665",6665,4000,false,v.Screen.fmMtx!txtRPTFile.Text,false,0,0,v.Ambient.Date,v.Ambient.Time)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdFPSave_Click.End
+
+Program.Sub.Data_Load.Start
+'LOAD DATA FROM JOB REPORTS AND POPULATE SCREEN
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sSQL.Declare
+v.Local.sRet.Declare
+v.Local.sJobSuff.Declare
+v.Local.sDate.Declare
+
+f.Intrinsic.String.Format(v.Ambient.Date,"MM/DD/YYYY",v.Local.sDate)
+
+f.Intrinsic.Control.If(v.Global.sSuffix,=,"")
+	v.Local.sJobSuff.Set(v.Global.sJob)
+f.Intrinsic.Control.Else
+	f.Intrinsic.String.Build("{0}-{1}",v.Global.sJob,v.Global.sSuffix,v.Local.sJobSuff)
+f.Intrinsic.Control.EndIf
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+f.Intrinsic.String.Build("Select rtrim(left(PART,17)) from V_JOB_HEADER where JOB = '{0}' and SUFFIX = '{1}'",v.Global.sJob,v.Global.sSuffix,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Global.sPart)
+
+f.Intrinsic.String.Build("Select * from GCG_6665_JOB_RPT where JOB = '{0}' and SUFFIX = '{1}' and rtrim(PART) = '{2}' and ORIG_REWORK = '1'",v.Global.sJob,v.Global.sSuffix,v.Global.sPart,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+
+f.ODBC.Connection!conx.Close
+
+f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.not)
+	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+f.Intrinsic.Control.Else
+	f.Intrinsic.UI.Msgbox("No Job Report found for current Job.  Testing information will need to be entered manually.","WARNING!")
+	gui.FmTest.txtJobRepeat.Text(v.Local.sJobSuff)
+	gui.FmTest.txtOpRepeat.Text(v.Global.sEmpName)
+	gui.FmTest.txtJobFD.Text(v.Local.sJobSuff)
+	gui.FmTest.txtOpFD.Text(v.Global.sEmpName)
+	f.Intrinsic.Control.CallSub(DDL_Populate)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.SelectCase(v.Args.Test)
+
+f.Intrinsic.Control.Case("RP")
+	gui.FmTest.txtJobRepeat.Text(v.Local.sJobSuff)
+	gui.FmTest.txtPartRepeat.Text(v.Local.sRet(5))
+	gui.FmTest.ddlSerialRepeat.Text("")
+	gui.FmTest.txtOpRepeat.Text(v.Global.sEmpName)
+	gui.FmTest.txtCustRepeat.Text(v.Local.sRet(6))
+	gui.FmTest.dtpDateRepeat.Value(v.Ambient.Date)
+	
+f.Intrinsic.Control.Case("FD")
+	gui.FmTest.txtJobFD.Text(v.Local.sJobSuff)
+	gui.FmTest.txtPartFD.Text(v.Local.sRet(5))
+	gui.FmTest.ddlSerialFD.Text("")
+	gui.FmTest.txtOpFD.Text(v.Global.sEmpName)
+	gui.FmTest.ddlTPFD.Text("")
+	gui.FmTest.ddlMinPFD.Text("")
+	gui.FmTest.ddlRTFD.Text("")
+	gui.FmTest.ddlWDFD.Text("")
+'	gui.FmTest.txtHRPMFD.Text("120")
+'	gui.FmTest.txtSDFD.Text("")
+'	gui.FmTest.txtCFDFD.Text("0.01")
+'	gui.FmTest.txtCFRFD.Text("0.003")
+'	gui.FmTest.txtFFDFD.Text("0.005")
+'	gui.FmTest.txtFFRFD.Text("0.003")
+	gui.FmTest.txtCustFD.Text(v.Local.sRet(6))
+	gui.FmTest.lbl3.Caption(v.Local.sDate)
+	
+f.Intrinsic.Control.EndSelect
+
+f.Intrinsic.Control.CallSub(DDL_Populate)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.Data_Load.End
+
+Program.Sub.DDL_Populate.Start
+'POPULATE DROP DOWN LISTS WITH REQUIRED VALUES AND SERIALS FROM JOB REPORTS
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sSQL.Declare
+v.Local.i.Declare
+
+gui.FmTest.ddlMinPFD.ClearItems
+gui.FmTest.ddlRTFD.ClearItems
+gui.FmTest.ddlSerialFD.ClearItems
+gui.FmTest.ddlSerialRepeat.ClearItems
+gui.FmTest.ddlTPFD.ClearItems
+gui.FmTest.ddlWDFD.ClearItems
+
+gui.FmTest.ddlMinPFD.AddItem("30")
+gui.FmTest.ddlMinPFD.AddItem("40")
+gui.FmTest.ddlMinPFD.AddItem("50")
+gui.FmTest.ddlMinPFD.AddItem("60")
+gui.FmTest.ddlMinPFD.AddItem("70")
+gui.FmTest.ddlMinPFD.AddItem("80")
+gui.FmTest.ddlMinPFD.AddItem("90")
+gui.FmTest.ddlMinPFD.AddItem("100")
+gui.FmTest.ddlMinPFD.AddItem("110")
+gui.FmTest.ddlMinPFD.AddItem("120")
+gui.FmTest.ddlMinPFD.AddItem("130")
+gui.FmTest.ddlMinPFD.AddItem("140")
+gui.FmTest.ddlMinPFD.AddItem("150")
+
+gui.FmTest.ddlTPFD.AddItem("14 BAR")
+gui.FmTest.ddlTPFD.AddItem("200 PSI")
+
+gui.FmTest.ddlRTFD.AddItem("15 Minutes")
+gui.FmTest.ddlRTFD.AddItem("30 Minutes")
+gui.FmTest.ddlRTFD.AddItem("45 Minutes")
+gui.FmTest.ddlRTFD.AddItem("60 Minutes")
+
+gui.FmTest.ddlWDFD.AddItem("16.0")
+gui.FmTest.ddlWDFD.AddItem("15.9")
+gui.FmTest.ddlWDFD.AddItem("15.8")
+gui.FmTest.ddlWDFD.AddItem("15.7")
+gui.FmTest.ddlWDFD.AddItem("15.6")
+gui.FmTest.ddlWDFD.AddItem("15.5")
+gui.FmTest.ddlWDFD.AddItem("15.4")
+gui.FmTest.ddlWDFD.AddItem("15.3")
+gui.FmTest.ddlWDFD.AddItem("15.2")
+gui.FmTest.ddlWDFD.AddItem("15.1")
+gui.FmTest.ddlWDFD.AddItem("15.0")
+gui.FmTest.ddlWDFD.AddItem("14.9")
+gui.FmTest.ddlWDFD.AddItem("14.8")
+gui.FmTest.ddlWDFD.AddItem("14.7")
+gui.FmTest.ddlWDFD.AddItem("14.6")
+gui.FmTest.ddlWDFD.AddItem("14.5")
+gui.FmTest.ddlWDFD.AddItem("14.4")
+gui.FmTest.ddlWDFD.AddItem("14.3")
+gui.FmTest.ddlWDFD.AddItem("14.2")
+gui.FmTest.ddlWDFD.AddItem("14.1")
+gui.FmTest.ddlWDFD.AddItem("14.0")
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+f.Intrinsic.String.Build("Select distinct SERIAL from GCG_6665_JOB_RPT where JOB = '{0}' and SUFFIX = '{1}' and PART = '{2}'",v.Global.sJob,v.Global.sSuffix,v.Global.sPart,v.Local.sSQL)
+f.Data.DataTable.CreateFromSQL("dtSerial","conx",v.Local.sSQL,true)
+
+f.ODBC.Connection!conx.Close
+
+f.Intrinsic.Control.If(v.DataTable.dtSerial.RowCount,>,0)
+	f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.dtSerial.RowCount--,1)
+		gui.FmTest.ddlSerialFD.AddItem(v.DataTable.dtSerial(v.Local.i).SERIAL!FieldValTrim)
+		gui.FmTest.ddlSerialRepeat.AddItem(v.DataTable.dtSerial(v.Local.i).SERIAL!FieldValTrim)
+	f.Intrinsic.Control.Next(v.Local.i)
+f.Intrinsic.Control.EndIf
+
+f.Data.DataTable.Close("dtSerial")
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.DDL_Populate.End
+
+Program.Sub.cmdCustFDBrw_Click.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sRet.Declare
+v.Local.sPart.Declare
+
+f.Intrinsic.UI.Browser(205,"",v.Local.sRet)
+
+f.Intrinsic.Control.If(v.Local.sRet,<>,"***CANCEL***")
+	
+	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+	gui.FmTest.txtCustFD.Text(v.Local.sRet(1).Trim)
+	
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdCustFDBrw_Click.End
+
+Program.Sub.cmdCustRepeatBrw_Click.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sRet.Declare
+v.Local.sPart.Declare
+
+f.Intrinsic.UI.Browser(205,"",v.Local.sRet)
+
+f.Intrinsic.Control.If(v.Local.sRet,<>,"***CANCEL***")
+	
+	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+	gui.FmTest.txtCustRepeat.Text(v.Local.sRet(1).Trim)
+	
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdCustRepeatBrw_Click.End
+
+Program.Sub.cmdFDTBrw_Click.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sFile.Declare
+
+f.Intrinsic.UI.ShowOpenFileDialog("","","",v.Local.sFile)
+f.Intrinsic.Control.If(v.Local.sFile,<>,"***CANCEL***")
+
+	gui.fmMtx.txtFDTFile.Text(v.Local.sFile)
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdFDTBrw_Click.End
+
+Program.Sub.cmdRPTBrw_Click.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sFile.Declare
+
+f.Intrinsic.UI.ShowOpenFileDialog("","","",v.Local.sFile)
+f.Intrinsic.Control.If(v.Local.sFile,<>,"***CANCEL***")
+
+	gui.fmMtx.txtRPTFile.Text(v.Local.sFile)
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdRPTBrw_Click.End
