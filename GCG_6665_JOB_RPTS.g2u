@@ -1,0 +1,1929 @@
+Program.Sub.ScreenSU.Start
+Gui.fmJobRpt..Create
+Gui.fmJobRpt..Caption("Job Report for Grinding, Turning and Gripping AUTO REST")
+Gui.fmJobRpt..Size(14745,7935)
+Gui.fmJobRpt..MinX(0)
+Gui.fmJobRpt..MinY(0)
+Gui.fmJobRpt..Position(0,0)
+Gui.fmJobRpt..BackColor(12632256)
+Gui.fmJobRpt..MousePointer(0)
+Gui.fmJobRpt..Event(UnLoad,fmJobRpt_UnLoad)
+Gui.fmJobRpt.frmJob.Create(Frame)
+Gui.fmJobRpt.frmJob.Size(8640,1245)
+Gui.fmJobRpt.frmJob.Position(105,30)
+Gui.fmJobRpt.frmJob.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.frmJob.Caption("Job Information")
+Gui.fmJobRpt.lblJob.Create(Label,"Work Order #:",True,1275,255,0,75,390,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lblJob.Parent("frmJob")
+Gui.fmJobRpt.lblJob.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.txtJob.Create(TextBox,"",True,1665,300,0,1365,300,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtJob.Parent("frmJob")
+Gui.fmJobRpt.txtJob.Event(LostFocus,txtJob_LostFocus)
+Gui.fmJobRpt.txtJob.TabStop(True)
+Gui.fmJobRpt.txtJob.TabIndex(1)
+Gui.fmJobRpt.txtJob.MaxLength(10)
+Gui.fmJobRpt.dtpDue.Create(DatePicker)
+Gui.fmJobRpt.dtpDue.Size(1665,285)
+Gui.fmJobRpt.dtpDue.Position(1365,750)
+Gui.fmJobRpt.dtpDue.Parent("frmJob")
+Gui.fmJobRpt.dtpDue.TabStop(True)
+Gui.fmJobRpt.dtpDue.TabIndex(3)
+Gui.fmJobRpt.lblDue.Create(Label,"Due Date:",True,885,255,0,450,840,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lblDue.Parent("frmJob")
+Gui.fmJobRpt.lblDue.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.lblCustomer.Create(Label,"Customer:",True,1020,255,0,3540,390,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lblCustomer.Parent("frmJob")
+Gui.fmJobRpt.lblCustomer.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.lblDesc.Create(Label,"Description:",True,1125,255,0,3435,840,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lblDesc.Parent("frmJob")
+Gui.fmJobRpt.lblDesc.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.txtCustomer.Create(TextBox,"",True,3900,300,0,4590,300,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtCustomer.Parent("frmJob")
+Gui.fmJobRpt.txtCustomer.TabStop(True)
+Gui.fmJobRpt.txtCustomer.TabIndex(4)
+Gui.fmJobRpt.txtDesc.Create(TextBox,"",True,3900,300,0,4590,750,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtDesc.Parent("frmJob")
+Gui.fmJobRpt.txtDesc.TabStop(True)
+Gui.fmJobRpt.txtDesc.TabIndex(5)
+Gui.fmJobRpt.cmdBrwJob.Create(Button)
+Gui.fmJobRpt.cmdBrwJob.Size(345,345)
+Gui.fmJobRpt.cmdBrwJob.Position(3105,270)
+Gui.fmJobRpt.cmdBrwJob.Parent("frmJob")
+Gui.fmJobRpt.cmdBrwJob.Caption("Browse")
+Gui.fmJobRpt.cmdBrwJob.DefaultValue("")
+Gui.fmJobRpt.cmdBrwJob.Event(Click,cmdBrwJob_Click)
+Gui.fmJobRpt.cmdBrwJob.TabStop(True)
+Gui.fmJobRpt.cmdBrwJob.TabIndex(2)
+Gui.fmJobRpt.frmSO.Create(Frame)
+Gui.fmJobRpt.frmSO.Size(8640,1365)
+Gui.fmJobRpt.frmSO.Position(105,1365)
+Gui.fmJobRpt.frmSO.Caption("Sales Order Information")
+Gui.fmJobRpt.frmSO.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.frmBuild.Create(Frame)
+Gui.fmJobRpt.frmBuild.Size(1695,810)
+Gui.fmJobRpt.frmBuild.Position(3480,330)
+Gui.fmJobRpt.frmBuild.Parent("frmSO")
+Gui.fmJobRpt.optOrig.Create(Option)
+Gui.fmJobRpt.optOrig.Size(1410,255)
+Gui.fmJobRpt.optOrig.Position(150,60)
+Gui.fmJobRpt.optOrig.Parent("frmBuild")
+Gui.fmJobRpt.optOrig.Caption("Original Build")
+Gui.fmJobRpt.optOrig.Value(True)
+Gui.fmJobRpt.optOrig.TabStop(True)
+Gui.fmJobRpt.optOrig.TabIndex(9)
+Gui.fmJobRpt.optRwrk.Create(Option)
+Gui.fmJobRpt.optRwrk.Size(1485,255)
+Gui.fmJobRpt.optRwrk.Position(150,450)
+Gui.fmJobRpt.optRwrk.Parent("frmBuild")
+Gui.fmJobRpt.optRwrk.Caption("Repair/Rework")
+Gui.fmJobRpt.optRwrk.TabStop(True)
+Gui.fmJobRpt.optRwrk.TabIndex(10)
+Gui.fmJobRpt.txtSO.Create(TextBox,"",True,1590,300,0,1365,360,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtSO.Parent("frmSO")
+Gui.fmJobRpt.txtSO.TabStop(True)
+Gui.fmJobRpt.txtSO.TabIndex(6)
+Gui.fmJobRpt.txtSO.MaxLength(7)
+Gui.fmJobRpt.txtSO.Event(LostFocus,txtSO_LostFocus)
+Gui.fmJobRpt.lblPart.Create(Label,"Model #:",True,720,255,0,615,855,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lblPart.Parent("frmSO")
+Gui.fmJobRpt.txtSerial.Create(TextBox,"0",True,2010,300,0,6165,360,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtSerial.Parent("frmSO")
+Gui.fmJobRpt.txtSerial.Event(LostFocus,txtSerial_LostFocus)
+Gui.fmJobRpt.txtSerial.NumericOnly(2)
+Gui.fmJobRpt.txtSerial.TabStop(True)
+Gui.fmJobRpt.txtSerial.TabIndex(11)
+Gui.fmJobRpt.txtSerial.Event(Change,txtSerial_Change)
+Gui.fmJobRpt.txtDwg.Create(TextBox,"",True,2010,300,0,6165,780,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtDwg.Parent("frmSO")
+Gui.fmJobRpt.txtDwg.Event(LostFocus,txtDwg_LostFocus)
+Gui.fmJobRpt.txtDwg.TabStop(True)
+Gui.fmJobRpt.txtDwg.TabIndex(12)
+Gui.fmJobRpt.txtDwg.MaxLength(20)
+Gui.fmJobRpt.txtModel.Create(TextBox,"",True,2010,300,0,1365,780,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtModel.Parent("frmSO")
+Gui.fmJobRpt.txtModel.TabStop(True)
+Gui.fmJobRpt.txtModel.TabIndex(8)
+Gui.fmJobRpt.txtModel.MaxLength(20)
+Gui.fmJobRpt.lblSO.Create(Label,"Sales Order #:",True,1290,255,0,45,450,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lblSO.Parent("frmSO")
+Gui.fmJobRpt.lblSO.ForeColor(128)
+Gui.fmJobRpt.lblSO.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.lblDwg.Create(Label,"Drawing #:",True,930,255,0,5190,870,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lblDwg.Parent("frmSO")
+Gui.fmJobRpt.lblSerial.Create(Label,"Serial #:",True,705,255,0,5415,450,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lblSerial.Parent("frmSO")
+Gui.fmJobRpt.cmdBrwPart.Create(Button)
+Gui.fmJobRpt.cmdBrwPart.Size(345,345)
+Gui.fmJobRpt.cmdBrwPart.Position(8250,750)
+Gui.fmJobRpt.cmdBrwPart.Parent("frmSO")
+Gui.fmJobRpt.cmdBrwPart.Caption("Browse")
+Gui.fmJobRpt.cmdBrwPart.DefaultValue("")
+Gui.fmJobRpt.cmdBrwPart.Event(Click,cmdBrwPart_Click)
+Gui.fmJobRpt.cmdBrwPart.TabStop(True)
+Gui.fmJobRpt.cmdBrwPart.TabIndex(13)
+Gui.fmJobRpt.cmdBrwSO.Create(Button)
+Gui.fmJobRpt.cmdBrwSO.Size(345,345)
+Gui.fmJobRpt.cmdBrwSO.Position(3030,330)
+Gui.fmJobRpt.cmdBrwSO.Parent("frmSO")
+Gui.fmJobRpt.cmdBrwSO.Caption("Browse")
+Gui.fmJobRpt.cmdBrwSO.DefaultValue("")
+Gui.fmJobRpt.cmdBrwSO.Event(Click,cmdBrwSO_Click)
+Gui.fmJobRpt.cmdBrwSO.TabStop(True)
+Gui.fmJobRpt.cmdBrwSO.TabIndex(7)
+Gui.fmJobRpt.frmAsmb.Create(Frame)
+Gui.fmJobRpt.frmAsmb.Size(8640,1245)
+Gui.fmJobRpt.frmAsmb.Position(105,2820)
+Gui.fmJobRpt.frmAsmb.Caption("Pre/Post Assembly")
+Gui.fmJobRpt.frmAsmb.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.lbl21.Create(Label,"Pre-Ass'y Instructions",True,1935,255,0,135,390,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl21.Parent("frmAsmb")
+Gui.fmJobRpt.lbl22.Create(Label,"Post-Ass'y Instructions",True,1935,255,0,135,810,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl22.Parent("frmAsmb")
+Gui.fmJobRpt.lbl23.Create(Label,"Dwg:",True,585,255,0,2025,390,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl23.Parent("frmAsmb")
+Gui.fmJobRpt.lbl24.Create(Label,"Dwg:",True,585,255,0,2025,810,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl24.Parent("frmAsmb")
+Gui.fmJobRpt.txtPostInstr.Create(TextBox,"",True,5925,300,0,2610,720,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtPostInstr.Parent("frmAsmb")
+Gui.fmJobRpt.txtPostInstr.TabStop(True)
+Gui.fmJobRpt.txtPostInstr.TabIndex(15)
+Gui.fmJobRpt.txtPreInstr.Create(TextBox,"",True,5925,300,0,2610,300,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtPreInstr.Parent("frmAsmb")
+Gui.fmJobRpt.txtPreInstr.TabStop(True)
+Gui.fmJobRpt.txtPreInstr.TabIndex(14)
+Gui.fmJobRpt.frmFllwDwn.Create(Frame)
+Gui.fmJobRpt.frmFllwDwn.Size(5775,3390)
+Gui.fmJobRpt.frmFllwDwn.Position(2970,4155)
+Gui.fmJobRpt.frmFllwDwn.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.frmFllwDwn.Caption("Req'd for Follow Down (Not part of Order)")
+Gui.fmJobRpt.txtBrkt.Create(TextBox,"",True,1665,300,0,1035,315,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtBrkt.Parent("frmFllwDwn")
+Gui.fmJobRpt.txtBrkt.TabStop(True)
+Gui.fmJobRpt.txtBrkt.TabIndex(22)
+Gui.fmJobRpt.lbl47.Create(Label,"Bracket:",True,735,255,0,255,405,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl47.Parent("frmFllwDwn")
+Gui.fmJobRpt.mltMisc.Create(TextboxM)
+Gui.fmJobRpt.mltMisc.Size(4665,615)
+Gui.fmJobRpt.mltMisc.Position(1035,2010)
+Gui.fmJobRpt.mltMisc.Parent("frmFllwDwn")
+Gui.fmJobRpt.mltMisc.TabStop(True)
+Gui.fmJobRpt.mltMisc.TabIndex(28)
+Gui.fmJobRpt.lbl48.Create(Label,"Adapter:",True,780,255,0,210,810,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl48.Parent("frmFllwDwn")
+Gui.fmJobRpt.lbl49.Create(Label,"Test Pressure:",True,1185,255,0,2820,405,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl49.Parent("frmFllwDwn")
+Gui.fmJobRpt.lbl50.Create(Label,"Test Dia:",True,750,255,0,3255,810,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl50.Parent("frmFllwDwn")
+Gui.fmJobRpt.txtAdpt.Create(TextBox,"",True,1665,300,0,1035,720,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtAdpt.Parent("frmFllwDwn")
+Gui.fmJobRpt.txtAdpt.TabStop(True)
+Gui.fmJobRpt.txtAdpt.TabIndex(24)
+Gui.fmJobRpt.txtTstPrs.Create(TextBox,"",True,1665,300,0,4005,315,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtTstPrs.Parent("frmFllwDwn")
+Gui.fmJobRpt.txtTstPrs.TabStop(True)
+Gui.fmJobRpt.txtTstPrs.TabIndex(23)
+Gui.fmJobRpt.txtTstDia.Create(TextBox,"",True,1665,300,0,4020,720,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtTstDia.Parent("frmFllwDwn")
+Gui.fmJobRpt.txtTstDia.TabStop(True)
+Gui.fmJobRpt.txtTstDia.TabIndex(25)
+Gui.fmJobRpt.lbl51.Create(Label,"Nests:",True,615,255,0,360,1215,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl51.Parent("frmFllwDwn")
+Gui.fmJobRpt.lbl52.Create(Label,"Wear Pads:",True,975,255,0,30,1650,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl52.Parent("frmFllwDwn")
+Gui.fmJobRpt.txtNests.Create(TextBox,"",True,4650,300,0,1035,1125,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtNests.Parent("frmFllwDwn")
+Gui.fmJobRpt.txtNests.TabStop(True)
+Gui.fmJobRpt.txtNests.TabIndex(26)
+Gui.fmJobRpt.txtWPads.Create(TextBox,"",True,4650,300,0,1035,1560,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtWPads.Parent("frmFllwDwn")
+Gui.fmJobRpt.txtWPads.TabStop(True)
+Gui.fmJobRpt.txtWPads.TabIndex(27)
+Gui.fmJobRpt.lbl53.Create(Label,"Misc Note:",True,885,255,0,105,2100,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl53.Parent("frmFllwDwn")
+Gui.fmJobRpt.lbl54.Create(Label,"Enhanced Follow Down Testing Req'd",True,2880,255,0,540,3090,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl54.Parent("frmFllwDwn")
+Gui.fmJobRpt.frmYN2.Create(Frame)
+Gui.fmJobRpt.frmYN2.Size(1530,285)
+Gui.fmJobRpt.frmYN2.Position(3555,3030)
+Gui.fmJobRpt.frmYN2.Parent("frmFllwDwn")
+Gui.fmJobRpt.frmYN2.BorderStyle(0)
+Gui.fmJobRpt.optEFDY.Create(Option)
+Gui.fmJobRpt.optEFDY.Size(735,255)
+Gui.fmJobRpt.optEFDY.Position(0,0)
+Gui.fmJobRpt.optEFDY.Parent("frmYN2")
+Gui.fmJobRpt.optEFDY.Caption("Yes")
+Gui.fmJobRpt.optEFDY.TabStop(True)
+Gui.fmJobRpt.optEFDY.TabIndex(31)
+Gui.fmJobRpt.optEFDN.Create(Option)
+Gui.fmJobRpt.optEFDN.Size(630,255)
+Gui.fmJobRpt.optEFDN.Position(855,0)
+Gui.fmJobRpt.optEFDN.Parent("frmYN2")
+Gui.fmJobRpt.optEFDN.Caption("No")
+Gui.fmJobRpt.optEFDN.Value(True)
+Gui.fmJobRpt.optEFDN.TabStop(True)
+Gui.fmJobRpt.optEFDN.TabIndex(32)
+Gui.fmJobRpt.frmYN1.Create(Frame)
+Gui.fmJobRpt.frmYN1.Size(1455,285)
+Gui.fmJobRpt.frmYN1.Position(3555,2670)
+Gui.fmJobRpt.frmYN1.Parent("frmFllwDwn")
+Gui.fmJobRpt.frmYN1.BorderStyle(0)
+Gui.fmJobRpt.optFDY.Create(Option)
+Gui.fmJobRpt.optFDY.Size(735,255)
+Gui.fmJobRpt.optFDY.Position(0,0)
+Gui.fmJobRpt.optFDY.Parent("frmYN1")
+Gui.fmJobRpt.optFDY.Caption("Yes")
+Gui.fmJobRpt.optFDY.TabStop(True)
+Gui.fmJobRpt.optFDY.TabIndex(29)
+Gui.fmJobRpt.optFDN.Create(Option)
+Gui.fmJobRpt.optFDN.Size(630,255)
+Gui.fmJobRpt.optFDN.Position(855,0)
+Gui.fmJobRpt.optFDN.Parent("frmYN1")
+Gui.fmJobRpt.optFDN.Caption("No")
+Gui.fmJobRpt.optFDN.Value(True)
+Gui.fmJobRpt.optFDN.TabStop(True)
+Gui.fmJobRpt.optFDN.TabIndex(30)
+Gui.fmJobRpt.lblFllwDwn.Create(Label,"Follow Down",True,1170,255,0,2250,2745,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lblFllwDwn.Parent("frmFllwDwn")
+Gui.fmJobRpt.lblFllwDwn.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.frmCyl.Create(Frame)
+Gui.fmJobRpt.frmCyl.Size(5730,2700)
+Gui.fmJobRpt.frmCyl.Position(8820,1365)
+Gui.fmJobRpt.frmCyl.Caption("Cylinder Information")
+Gui.fmJobRpt.frmCyl.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.lblPU.Create(Label,"Pressure Units:",True,1260,255,0,90,360,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lblPU.Parent("frmCyl")
+Gui.fmJobRpt.ddlPU.Create(DropDownList)
+Gui.fmJobRpt.ddlPU.Size(1095,330)
+Gui.fmJobRpt.ddlPU.Position(1410,255)
+Gui.fmJobRpt.ddlPU.Parent("frmCyl")
+Gui.fmJobRpt.ddlPU.TabStop(True)
+Gui.fmJobRpt.ddlPU.TabIndex(35)
+Gui.fmJobRpt.txtOPLow.Create(TextBox,"",True,825,300,0,4560,1110,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtOPLow.Parent("frmCyl")
+Gui.fmJobRpt.txtOPLow.TabStop(True)
+Gui.fmJobRpt.txtOPLow.TabIndex(38)
+Gui.fmJobRpt.txtOPLow.Event(LostFocus,txtOPLow_LostFocus)
+Gui.fmJobRpt.lbl28.Create(Label,"Port Size - Lube:",True,1305,255,0,2940,360,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl28.Parent("frmCyl")
+Gui.fmJobRpt.lbl29.Create(Label,"Op Press - Cycle:",True,1410,255,0,2940,2400,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl29.Parent("frmCyl")
+Gui.fmJobRpt.lbl30.Create(Label,"Port Size - Cyl:",True,1305,255,0,2940,780,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl30.Parent("frmCyl")
+Gui.fmJobRpt.lbl31.Create(Label,"Op Press - Max:",True,1305,255,0,2940,2010,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl31.Parent("frmCyl")
+Gui.fmJobRpt.lbl32.Create(Label,"Op Press - High:",True,1305,255,0,2940,1605,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl32.Parent("frmCyl")
+Gui.fmJobRpt.lbl33.Create(Label,"Op Press - Low:",True,1305,255,0,2940,1200,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl33.Parent("frmCyl")
+Gui.fmJobRpt.ddlPSCyl.Create(DropDownList)
+Gui.fmJobRpt.ddlPSCyl.Size(1095,330)
+Gui.fmJobRpt.ddlPSCyl.Position(4560,675)
+Gui.fmJobRpt.ddlPSCyl.Parent("frmCyl")
+Gui.fmJobRpt.ddlPSCyl.TabStop(True)
+Gui.fmJobRpt.ddlPSCyl.TabIndex(37)
+Gui.fmJobRpt.ddlPSLube.Create(DropDownList)
+Gui.fmJobRpt.ddlPSLube.Size(1095,330)
+Gui.fmJobRpt.ddlPSLube.Position(4560,255)
+Gui.fmJobRpt.ddlPSLube.Parent("frmCyl")
+Gui.fmJobRpt.ddlPSLube.TabStop(True)
+Gui.fmJobRpt.ddlPSLube.TabIndex(36)
+Gui.fmJobRpt.txtOPCycle.Create(TextBox,"",True,825,300,0,4560,2325,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtOPCycle.Parent("frmCyl")
+Gui.fmJobRpt.txtOPCycle.TabStop(True)
+Gui.fmJobRpt.txtOPCycle.TabIndex(41)
+Gui.fmJobRpt.txtOPMax.Create(TextBox,"",True,825,300,0,4560,1920,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtOPMax.Parent("frmCyl")
+Gui.fmJobRpt.txtOPMax.TabStop(True)
+Gui.fmJobRpt.txtOPMax.TabIndex(40)
+Gui.fmJobRpt.txtOPHigh.Create(TextBox,"",True,825,300,0,4560,1515,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtOPHigh.Parent("frmCyl")
+Gui.fmJobRpt.txtOPHigh.TabStop(True)
+Gui.fmJobRpt.txtOPHigh.TabIndex(39)
+Gui.fmJobRpt.txtOPHigh.Event(LostFocus,txtOPHigh_LostFocus)
+Gui.fmJobRpt.frmAssyBP.Create(Frame)
+Gui.fmJobRpt.frmAssyBP.Size(5730,1245)
+Gui.fmJobRpt.frmAssyBP.Position(8820,30)
+Gui.fmJobRpt.frmAssyBP.Caption("Assy BP's")
+Gui.fmJobRpt.frmAssyBP.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.lblBPDwg.Create(Label,"Shop Assy BP's:",True,1320,255,0,90,390,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lblBPDwg.Parent("frmAssyBP")
+Gui.fmJobRpt.txtBPDwg.Create(TextBox,"",True,3945,300,0,1680,300,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtBPDwg.Parent("frmAssyBP")
+Gui.fmJobRpt.txtBPDwg.TabStop(True)
+Gui.fmJobRpt.txtBPDwg.TabIndex(33)
+Gui.fmJobRpt.lblBPBy.Create(Label,"Shop Assy BP's By:",True,1575,255,0,90,840,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lblBPBy.Parent("frmAssyBP")
+Gui.fmJobRpt.ddlBPBy.Create(ComboBox)
+Gui.fmJobRpt.ddlBPBy.Size(1530,330)
+Gui.fmJobRpt.ddlBPBy.Position(1680,735)
+Gui.fmJobRpt.ddlBPBy.Parent("frmAssyBP")
+Gui.fmJobRpt.ddlBPBy.TabStop(True)
+Gui.fmJobRpt.ddlBPBy.TabIndex(34)
+Gui.fmJobRpt.frmTags.Create(Frame)
+Gui.fmJobRpt.frmTags.Size(2790,3390)
+Gui.fmJobRpt.frmTags.Position(105,4155)
+Gui.fmJobRpt.frmTags.Caption("Caution Tags")
+Gui.fmJobRpt.frmTags.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.lblCTQty.Create(Label,"Caution Tag Qty:",True,2070,330,0,75,555,True,0,"Arial",12,-2147483633,0)
+Gui.fmJobRpt.lblCTQty.Parent("frmTags")
+Gui.fmJobRpt.lblCTQty.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.txtCTCust.Create(TextBox,"",True,1560,300,0,1110,2070,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtCTCust.Parent("frmTags")
+Gui.fmJobRpt.txtCTCust.TabStop(True)
+Gui.fmJobRpt.txtCTCust.TabIndex(19)
+Gui.fmJobRpt.txtCTCust.MaxLength(13)
+Gui.fmJobRpt.frmYN3.Create(Frame)
+Gui.fmJobRpt.frmYN3.Size(1455,285)
+Gui.fmJobRpt.frmYN3.Position(660,1455)
+Gui.fmJobRpt.frmYN3.Parent("frmTags")
+Gui.fmJobRpt.frmYN3.BorderStyle(0)
+Gui.fmJobRpt.optTagY.Create(Option)
+Gui.fmJobRpt.optTagY.Size(735,255)
+Gui.fmJobRpt.optTagY.Position(690,0)
+Gui.fmJobRpt.optTagY.Parent("frmYN3")
+Gui.fmJobRpt.optTagY.Caption("Yes")
+Gui.fmJobRpt.optTagY.TabStop(True)
+Gui.fmJobRpt.optTagY.TabIndex(18)
+Gui.fmJobRpt.optTagN.Create(Option)
+Gui.fmJobRpt.optTagN.Size(630,255)
+Gui.fmJobRpt.optTagN.Position(0,0)
+Gui.fmJobRpt.optTagN.Parent("frmYN3")
+Gui.fmJobRpt.optTagN.Caption("No")
+Gui.fmJobRpt.optTagN.Value(True)
+Gui.fmJobRpt.optTagN.TabStop(True)
+Gui.fmJobRpt.optTagN.TabIndex(17)
+Gui.fmJobRpt.lblCT.Create(Label,"Customer Tag",True,1755,330,0,495,1110,True,0,"Arial",12,-2147483633,0)
+Gui.fmJobRpt.lblCT.Parent("frmTags")
+Gui.fmJobRpt.lblCT.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.lbl3.Create(Label,"Cust. Name",True,975,255,0,75,2160,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl3.Parent("frmTags")
+Gui.fmJobRpt.lbl4.Create(Label,"Cust P/N",True,750,255,0,300,2595,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl4.Parent("frmTags")
+Gui.fmJobRpt.lbl5.Create(Label,"Unit Date",True,780,255,0,270,3030,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl5.Parent("frmTags")
+Gui.fmJobRpt.txtCTQty.Create(TextBox,"1",True,465,300,0,2205,510,True,2,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtCTQty.Parent("frmTags")
+Gui.fmJobRpt.txtCTQty.NumericOnly(2)
+Gui.fmJobRpt.txtCTQty.TabStop(True)
+Gui.fmJobRpt.txtCTQty.TabIndex(16)
+Gui.fmJobRpt.txtCTPN.Create(TextBox,"",True,1560,300,0,1110,2505,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtCTPN.Parent("frmTags")
+Gui.fmJobRpt.txtCTPN.TabStop(True)
+Gui.fmJobRpt.txtCTPN.TabIndex(20)
+Gui.fmJobRpt.txtCTPN.MaxLength(19)
+Gui.fmJobRpt.dtpCT.Create(DatePicker)
+Gui.fmJobRpt.dtpCT.Size(1560,285)
+Gui.fmJobRpt.dtpCT.Position(1110,2940)
+Gui.fmJobRpt.dtpCT.Parent("frmTags")
+Gui.fmJobRpt.dtpCT.Value("1/1/1900")
+Gui.fmJobRpt.dtpCT.TabStop(True)
+Gui.fmJobRpt.dtpCT.TabIndex(21)
+Gui.fmJobRpt.frmCtrl.Create(Frame)
+Gui.fmJobRpt.frmCtrl.Size(5730,3390)
+Gui.fmJobRpt.frmCtrl.Position(8820,4155)
+Gui.fmJobRpt.frmCtrl.Caption("Job Report Controls")
+Gui.fmJobRpt.frmCtrl.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.cmdSave.Create(Button)
+Gui.fmJobRpt.cmdSave.Size(3225,600)
+Gui.fmJobRpt.cmdSave.Position(2355,285)
+Gui.fmJobRpt.cmdSave.Parent("frmCtrl")
+Gui.fmJobRpt.cmdSave.Caption("Create / Edit Job Report Template")
+Gui.fmJobRpt.cmdSave.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.cmdSave.Event(Click,cmdSave_Click)
+Gui.fmJobRpt.cmdSave.TabStop(True)
+Gui.fmJobRpt.cmdSave.TabIndex(45)
+Gui.fmJobRpt.frmRel.Create(Frame)
+Gui.fmJobRpt.frmRel.Size(5565,570)
+Gui.fmJobRpt.frmRel.Position(105,2715)
+Gui.fmJobRpt.frmRel.Parent("frmCtrl")
+Gui.fmJobRpt.dtpRel.Create(DatePicker)
+Gui.fmJobRpt.dtpRel.Size(1560,285)
+Gui.fmJobRpt.dtpRel.Position(3930,135)
+Gui.fmJobRpt.dtpRel.Parent("frmRel")
+Gui.fmJobRpt.dtpRel.TabStop(True)
+Gui.fmJobRpt.dtpRel.TabIndex(51)
+Gui.fmJobRpt.ddlRel.Create(ComboBox)
+Gui.fmJobRpt.ddlRel.Size(750,330)
+Gui.fmJobRpt.ddlRel.Position(1875,120)
+Gui.fmJobRpt.ddlRel.Parent("frmRel")
+Gui.fmJobRpt.ddlRel.TabStop(True)
+Gui.fmJobRpt.ddlRel.TabIndex(50)
+Gui.fmJobRpt.lbl6.Create(Label,"Approved for Release:",True,1770,255,0,60,225,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl6.Parent("frmRel")
+Gui.fmJobRpt.lbl7.Create(Label,"Released Date:",True,1215,255,0,2685,225,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl7.Parent("frmRel")
+Gui.fmJobRpt.lbl2.Create(Label,"Find Serial #:",True,1080,255,0,615,2130,True,0,"Arial",8,-2147483633,0)
+Gui.fmJobRpt.lbl2.Parent("frmCtrl")
+Gui.fmJobRpt.cmdCopy.Create(Button)
+Gui.fmJobRpt.cmdCopy.Size(1755,600)
+Gui.fmJobRpt.cmdCopy.Position(2355,975)
+Gui.fmJobRpt.cmdCopy.Parent("frmCtrl")
+Gui.fmJobRpt.cmdCopy.Caption("Copy for Add'l Unit")
+Gui.fmJobRpt.cmdCopy.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.cmdCopy.Event(Click,cmdCopy_Click)
+Gui.fmJobRpt.cmdCopy.TabStop(True)
+Gui.fmJobRpt.cmdCopy.TabIndex(48)
+Gui.fmJobRpt.cmdDelete.Create(Button)
+Gui.fmJobRpt.cmdDelete.Size(1755,600)
+Gui.fmJobRpt.cmdDelete.Position(2355,1665)
+Gui.fmJobRpt.cmdDelete.Parent("frmCtrl")
+Gui.fmJobRpt.cmdDelete.Caption("Delete Job Report")
+Gui.fmJobRpt.cmdDelete.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.cmdDelete.Event(Click,cmdDelete_Click)
+Gui.fmJobRpt.cmdDelete.TabStop(True)
+Gui.fmJobRpt.cmdDelete.TabIndex(49)
+Gui.fmJobRpt.cmdPrint.Create(Button)
+Gui.fmJobRpt.cmdPrint.Size(1395,1290)
+Gui.fmJobRpt.cmdPrint.Position(4185,975)
+Gui.fmJobRpt.cmdPrint.Parent("frmCtrl")
+Gui.fmJobRpt.cmdPrint.Caption("Print")
+Gui.fmJobRpt.cmdPrint.FontStyle(True,False,False,False,False)
+Gui.fmJobRpt.cmdPrint.Event(Click,cmdPrint_Click)
+Gui.fmJobRpt.cmdPrint.TabStop(True)
+Gui.fmJobRpt.cmdPrint.TabIndex(46)
+Gui.fmJobRpt.GsGcSerial.Create(GsGridControl)
+Gui.fmJobRpt.GsGcSerial.Size(2175,1740)
+Gui.fmJobRpt.GsGcSerial.Position(75,300)
+Gui.fmJobRpt.GsGcSerial.Parent("frmCtrl")
+Gui.fmJobRpt.GsGcSerial.Event(RowClick,GsGcSerial_RowClick)
+Gui.fmJobRpt.GsGcSerial.TabStop(True)
+Gui.fmJobRpt.GsGcSerial.TabIndex(42)
+Gui.fmJobRpt.txtBrwSerial.Create(TextBox,"",True,2175,300,0,75,2355,True,0,"Arial",8,-2147483643,1)
+Gui.fmJobRpt.txtBrwSerial.Parent("frmCtrl")
+Gui.fmJobRpt.txtBrwSerial.Locked(True)
+Gui.fmJobRpt.txtBrwSerial.TabStop(True)
+Gui.fmJobRpt.txtBrwSerial.TabIndex(43)
+Gui.fmJobRpt.cmdBrwSerial.Create(Button)
+Gui.fmJobRpt.cmdBrwSerial.Size(345,345)
+Gui.fmJobRpt.cmdBrwSerial.Position(2355,2325)
+Gui.fmJobRpt.cmdBrwSerial.Parent("frmCtrl")
+Gui.fmJobRpt.cmdBrwSerial.Caption("Browse")
+Gui.fmJobRpt.cmdBrwSerial.DefaultValue("")
+Gui.fmJobRpt.cmdBrwSerial.Event(Click,cmdBrwSerial_Click)
+Gui.fmJobRpt.cmdBrwSerial.TabStop(True)
+Gui.fmJobRpt.cmdBrwSerial.TabIndex(44)
+Gui.fmJobRpt.chkPrintAll.Create(CheckBox)
+Gui.fmJobRpt.chkPrintAll.Size(1560,360)
+Gui.fmJobRpt.chkPrintAll.Position(4185,2310)
+Gui.fmJobRpt.chkPrintAll.Parent("frmCtrl")
+Gui.fmJobRpt.chkPrintAll.Caption("Print All Serials")
+Gui.fmJobRpt.chkPrintAll.TabStop(True)
+Gui.fmJobRpt.chkPrintAll.TabIndex(47)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.sJob.Declare
+v.Global.sSuffix.Declare
+v.Global.sPart.Declare
+v.Global.sOrderNo.Declare
+v.Global.sCustomer.Declare
+v.Global.sSerial.Declare
+v.Global.sSerialOrig.Declare
+v.Global.sStatus.Declare
+v.Global.bLoadData.Declare
+v.Global.fQty.Declare
+v.Global.dDueDate.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+f.Intrinsic.Control.CallSub(DDL_Populate)
+
+gui.fmJobRpt..Visible(true)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.fmJobRpt_UnLoad.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+gui.fmJobRpt..Visible(false)
+
+f.Intrinsic.Control.End
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.fmJobRpt_UnLoad.End
+
+Program.Sub.cmdSave_Click.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sSQL.Declare
+v.Local.sRet.Declare
+v.Local.sSerReq.Declare
+v.Local.sWarReq.Declare
+v.Local.iFD.Declare
+v.Local.iEFD.Declare
+v.Local.iPreA.Declare
+v.Local.iPostA.Declare
+v.Local.iTag.Declare
+v.Local.iLen.Declare
+v.Local.iSerial.Declare
+v.Local.sJobSerial.Declare
+v.Local.sSerialStart.Declare
+v.Local.i.Declare
+
+'PERFORM CHECKS FOR REQUIRED FIELDS BEFORE SAVING
+f.Intrinsic.Control.If(v.Screen.fmJobRpt!txtOPLow.Text,=,"",or,v.Screen.fmJobRpt!txtOPHigh.Text,=,"",v.Screen.fmJobRpt!txtOPMax.Text,=,"",v.Screen.fmJobRpt!txtOPCycle.Text,=,"",v.Screen.fmJobRpt!txtBPDwg.Text,=,"",v.Screen.fmJobRpt!ddlPU.Text,=,"",v.Screen.fmJobRpt!ddlPSCyl.Text,=,"",v.Screen.fmJobRpt!ddlPSLube.Text,=,"",V.Screen.fmJobRpt!txtDesc.Text,=,"",v.Screen.fmJobRpt!txtModel.Text,=,"",v.Screen.fmJobRpt!txtDwg.Text,=,"")
+	f.Intrinsic.UI.Msgbox("Missing required information.  Please make sure all required information is filled out.","ERROR!")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+'TAKE LENGTH OF JOB FIELD AND SPLIT APPROPRIATELY
+f.Intrinsic.String.Len(v.Screen.fmJobRpt!txtJob.Text,v.Local.iLen)
+
+f.Intrinsic.Control.If(v.Local.iLen,>,6)
+	f.Intrinsic.String.Left(v.Screen.fmJobRpt!txtJob.Text,6,v.Global.sJob)
+	f.Intrinsic.String.Right(v.Screen.fmJobRpt!txtJob.Text,3,v.Global.sSuffix)
+f.Intrinsic.Control.Else
+	v.Global.sJob.Set(v.Screen.fmJobRpt!txtJob.Text)
+	v.Global.sSuffix.Set("")
+f.Intrinsic.Control.EndIf
+
+'CONVERT BOOLEAN TO BIT FOR REQUIRED FIELDS
+f.Intrinsic.Control.If(v.Screen.fmJobRpt!optOrig.Value,=,True)
+	v.Global.sStatus.Set(1)
+f.Intrinsic.Control.Else
+	v.Global.sStatus.Set(2)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.fmJobRpt!optFDY.Value,=,True)
+	v.Local.iFD.Set(1)
+f.Intrinsic.Control.Else
+	v.Local.iFD.Set(0)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.fmJobRpt!optEFDY.Value,=,True)
+	v.Local.iEFD.Set(1)
+f.Intrinsic.Control.Else
+	v.Local.iEFD.Set(0)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.fmJobRpt!txtPreInstr.Text,<>,"")
+	v.Local.iPreA.Set(1)
+f.Intrinsic.Control.Else
+	v.Local.iPreA.Set(0)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.fmJobRpt!txtPostInstr.Text,<>,"")
+	v.Local.iPostA.Set(1)
+f.Intrinsic.Control.Else
+	v.Local.iPostA.Set(0)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.fmJobRpt!optTagY.Value,=,True)
+	v.Local.iTag.Set(1)
+f.Intrinsic.Control.Else
+	v.Local.iTag.Set(0)
+f.Intrinsic.Control.EndIf
+
+'CLOSE DATATABLE IF IT ALREADY EXISTS
+f.Intrinsic.Control.If(v.DataTable.dtSave.Exists)
+	f.Data.DataTable.Close("dtSave")
+f.Intrinsic.Control.EndIf
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+'CHECKING FOR FLAG_SERIALIZE IN EITHER PART MASTER OR JOB HEADER
+'f.Intrinsic.String.Build("Select rtrim(PART) from V_JOB_HEADER where JOB = '{0}' and SUFFIX = '{1}'",v.Global.sJob,v.Global.sSuffix,v.Local.sSQL)
+'f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+
+'f.Intrinsic.String.Build("Select FLAG_SERIALIZE, FLAG_WARRANTY from V_INVENTORY_MSTR where rtrim(PART) = '{0}'",v.Local.sRet,v.Local.sSQL)
+'f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+
+f.Intrinsic.String.Build("Select FLAG_SERIALIZE from V_JOB_HEADER where JOB = '{0}' and SUFFIX = '{1}'",v.Global.sJob,v.Global.sSuffix,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+
+'f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+'v.Local.sSerReq.Set(v.Local.sRet(0))
+'v.Local.sWarReq.Set(v.Local.sRet(1))
+v.Local.sSerReq.Set(v.Local.sRet)
+
+'PERFORM SAVE FUNCTION BASED ON THE TYPE OF SAVE BEING PERFORMED
+f.Intrinsic.Control.SelectCase(v.Screen.fmJobRpt!cmdSave.Caption)
+
+'SAVE CHANGES TO AN EXISTING REPORT
+f.Intrinsic.Control.Case("Save Job Report")
+
+	f.Data.DataTable.CreateFromSQL("dtSave","conx","Select * from GCG_6665_JOB_RPT where SERIAL = '999999999'",true)
+		
+'	f.Intrinsic.Control.If(v.Local.sSerReq,=,"Y",or,v.Local.sWarReq,=,"Y")
+	
+		f.Data.DataTable.AddRow("dtSave","JOB",v.Global.sJob,"SUFFIX",v.Global.sSuffix,"ORDER_NO",v.Screen.fmJobRpt!txtSO.Text,"SERIAL",v.Screen.fmJobRpt!txtSerial.Text,"DESCRIPTION",v.Screen.fmJobRpt!txtDesc.Text,"MODEL",v.Screen.fmJobRpt!txtModel.Text,"NAME_CUSTOMER",v.Screen.fmJobRpt!txtCustomer.Text,"DATE_DUE",v.Screen.fmJobRpt!dtpDue.Value,"UNITS_PRESSURE",v.Screen.fmJobRpt!ddlPU.Text,"OP_LOW",v.Screen.fmJobRpt!txtOPLow.Text,"OP_HIGH",v.Screen.fmJobRpt!txtOPHigh.Text,"OP_MAX",v.Screen.fmJobRpt!txtOPMax.Text,"PART",v.Global.sPart,"SIZE_CYL",v.Screen.fmJobRpt!ddlPSCyl.Text,"SIZE_LUBE",v.Screen.fmJobRpt!ddlPSLube.Text,"FOLLOW_DOWN",v.Local.iFD,"SHOP_ASSY_BP",v.Screen.fmJobRpt!txtBPDwg.Text,"SHOP_ASSY_BY",v.Screen.fmJobRpt!ddlBPBy.Text,"RELEASED_BY",v.Screen.fmJobRpt!ddlRel.Text,"DATE_RELEASED",v.Screen.fmJobRpt!dtpRel.Value,"PREASSYINSTR",v.Local.iPreA,"PREASSYDWG",v.Screen.fmJobRpt!txtPreInstr.Text,"POSTASSYINSTR",v.Local.iPostA,"POSTASSYDWG",v.Screen.fmJobRpt!txtPostInstr.Text,"BRACKET",v.Screen.fmJobRpt!txtBrkt.Text,"ADAPTER",v.Screen.fmJobRpt!txtAdpt.Text,"NESTS",v.Screen.fmJobRpt!txtNests.Text,"TEST_PRESSURE",v.Screen.fmJobRpt!txtTstPrs.Text,"TEST_DIA",v.Screen.fmJobRpt!txtTstDia.Text,"PADS_WEAR",v.Screen.fmJobRpt!txtWPads.Text,"NOTES_MISC",v.Screen.fmJobRpt!mltMisc.Text,"TAG_CUST",v.Local.iTag,"NAME_CUST_TAG",v.Screen.fmJobRpt!txtCTCust.Text,"NUM_CUST_TAG",v.Screen.fmJobRpt!txtCTPN.Text,"DATE_CUST_TAG",v.Screen.fmJobRpt!dtpCT.Value,"QTY_TAG",v.Screen.fmJobRpt!txtCTQty.Text,"PRESSURE_CYCLE",v.Screen.fmJobRpt!txtOPCycle.Text,"FD_ENHANCED",v.Local.iEFD,"ORIG_REWORK",v.Global.sStatus)
+		f.Data.DataTable.SaveToDB("dtSave","conx","GCG_6665_JOB_RPT","PART*!*SERIAL*!*ORIG_REWORK",256)
+		
+		f.Intrinsic.Control.If(v.Global.sSerialOrig,<>,"")
+			f.Intrinsic.String.Build("DELETE from GCG_6665_JOB_RPT where SERIAL = '{0}'",v.Global.sSerialOrig,v.Local.sSQL)
+			f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		f.Intrinsic.Control.EndIf
+	
+'	f.Intrinsic.Control.Else
+'	
+'		f.Data.DataTable.AddRow("dtSave","JOB",v.Global.sJob,"SUFFIX",v.Global.sSuffix,"ORDER_NO",v.Screen.fmJobRpt!txtSO.Text,"DESCRIPTION",v.Screen.fmJobRpt!txtDesc.Text,"MODEL",v.Screen.fmJobRpt!txtModel.Text,"NAME_CUSTOMER",v.Screen.fmJobRpt!txtCustomer.Text,"DATE_DUE",v.Screen.fmJobRpt!dtpDue.Value,"UNITS_PRESSURE",v.Screen.fmJobRpt!ddlPU.Text,"OP_LOW",v.Screen.fmJobRpt!txtOPLow.Text,"OP_HIGH",v.Screen.fmJobRpt!txtOPHigh.Text,"OP_MAX",v.Screen.fmJobRpt!txtOPMax.Text,"PART",v.Global.sPart,"SIZE_CYL",v.Screen.fmJobRpt!ddlPSCyl.Text,"SIZE_LUBE",v.Screen.fmJobRpt!ddlPSLube.Text,"FOLLOW_DOWN",v.Local.iFD,"SHOP_ASSY_BP",v.Screen.fmJobRpt!txtBPDwg.Text,"SHOP_ASSY_BY",v.Screen.fmJobRpt!ddlBPBy.Text,"RELEASED_BY",v.Screen.fmJobRpt!ddlRel.Text,"DATE_RELEASED",v.Screen.fmJobRpt!dtpRel.Value,"PREASSYINSTR",v.Local.iPreA,"PREASSYDWG",v.Screen.fmJobRpt!txtPreInstr.Text,"POSTASSYINSTR",v.Local.iPostA,"POSTASSYDWG",v.Screen.fmJobRpt!txtPostInstr.Text,"BRACKET",v.Screen.fmJobRpt!txtBrkt.Text,"ADAPTER",v.Screen.fmJobRpt!txtAdpt.Text,"NESTS",v.Screen.fmJobRpt!txtNests.Text,"TEST_PRESSURE",v.Screen.fmJobRpt!txtTstPrs.Text,"TEST_DIA",v.Screen.fmJobRpt!txtTstDia.Text,"PADS_WEAR",v.Screen.fmJobRpt!txtWPads.Text,"NOTES_MISC",v.Screen.fmJobRpt!mltMisc.Text,"TAG_CUST",v.Local.iTag,"NAME_CUST_TAG",v.Screen.fmJobRpt!txtCTCust.Text,"NUM_CUST_TAG",v.Screen.fmJobRpt!txtCTPN.Text,"DATE_CUST_TAG",v.Screen.fmJobRpt!dtpCT.Value,"QTY_TAG",v.Screen.fmJobRpt!txtCTQty.Text,"PRESSURE_CYCLE",v.Screen.fmJobRpt!txtOPCycle.Text,"FD_ENHANCED",v.Local.iEFD,"ORIG_REWORK",v.Global.sStatus)
+'		f.Data.DataTable.SaveToDB("dtSave","conx","GCG_6665_JOB_RPT","PART*!*ORIG_REWORK",256)
+'		
+'	f.Intrinsic.Control.EndIf
+
+	f.Intrinsic.UI.Msgbox("Job Report has been saved.","SUCCESS!")
+	
+	f.Intrinsic.UI.Msgbox("Do you want to update the Job Report Template?","NOTICE!",4,v.Local.sRet)
+
+	f.Intrinsic.Control.If(v.Local.sRet,=,v.Ambient.MsgBoxYes)	
+		
+		f.Data.DataTable.CreateFromSQL("dtSaveTemp","conx","Select * from GCG_6665_JOB_RPT_TPT where rtrim(PART) = 'ZZZZZZZZZZ'",true)
+		f.Data.DataTable.AddRow("dtSaveTemp","DESCRIPTION",v.Screen.fmJobRpt!txtDesc.Text,"MODEL",v.Screen.fmJobRpt!txtModel.Text,"UNITS_PRESSURE",v.Screen.fmJobRpt!ddlPU.Text,"OP_LOW",v.Screen.fmJobRpt!txtOPLow.Text,"OP_HIGH",v.Screen.fmJobRpt!txtOPHigh.Text,"OP_MAX",v.Screen.fmJobRpt!txtOPMax.Text,"PART",v.Global.sPart,"SIZE_CYL",v.Screen.fmJobRpt!ddlPSCyl.Text,"SIZE_LUBE",v.Screen.fmJobRpt!ddlPSLube.Text,"FOLLOW_DOWN",v.Local.iFD,"PREASSYINSTR",v.Local.iPreA,"PREASSYDWG",v.Screen.fmJobRpt!txtPreInstr.Text,"POSTASSYINSTR",v.Local.iPostA,"POSTASSYDWG",v.Screen.fmJobRpt!txtPostInstr.Text,"BRACKET",v.Screen.fmJobRpt!txtBrkt.Text,"ADAPTER",v.Screen.fmJobRpt!txtAdpt.Text,"NESTS",v.Screen.fmJobRpt!txtNests.Text,"TEST_PRESSURE",v.Screen.fmJobRpt!txtTstPrs.Text,"TEST_DIA",v.Screen.fmJobRpt!txtTstDia.Text,"PADS_WEAR",v.Screen.fmJobRpt!txtWPads.Text,"NOTES_MISC",v.Screen.fmJobRpt!mltMisc.Text,"QTY_TAG",v.Screen.fmJobRpt!txtCTQty.Text,"FD_ENHANCED",v.Local.iEFD,"CYCLE_PRESSURE",v.Screen.fmJobRpt!txtOPCycle.Text,"SHOP_ASSY_BP",v.Screen.fmJobRpt!txtBPDwg.Text,"SHOP_ASSY_BY",v.Screen.fmJobRpt!ddlBPBy.Text)
+		f.Data.DataTable.SaveToDB("dtSaveTemp","conx","GCG_6665_JOB_RPT_TPT","PART",256)
+		f.Data.DataTable.Close("dtSaveTemp")
+		
+		f.Intrinsic.UI.Msgbox("Job Report Template has been saved.","SUCCESS!")
+		
+	f.Intrinsic.Control.EndIf
+	
+	f.ODBC.Connection!conx.Close
+
+'CREATE NEW RECORDS FOR A JOB THAT DOES NOT HAVE EXISTING REPORTS
+f.Intrinsic.Control.Case("Create Job Report(s)")
+	
+'	f.Intrinsic.Math.Sub(v.Screen.fmJobRpt!txtSerial.Text,1,v.Local.iSerial)
+
+	f.Intrinsic.String.Build("Select QTY_ORDER from V_JOB_HEADER where JOB = '{0}' and SUFFIX = '{1}'",v.Global.sJob,v.Global.sSuffix,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Global.fQty)
+
+	v.Local.iSerial.Set(0)
+
+'CREATE BLANK TABLE TO ADD ROWS TO FOR SAVETODB
+	f.Data.DataTable.CreateFromSQL("dtSave","conx","Select * from GCG_6665_JOB_RPT where SERIAL = '999999999'",true)
+
+'CREATE MULTIPLE REPORTS IF THE JOB REQUIRES SERIALIZATION
+	f.Intrinsic.Control.If(v.Local.sSerReq,=,"Y")
+	
+		f.Intrinsic.Control.For(v.Local.i,1,v.Global.fQty,1)
+			
+			f.Intrinsic.Math.Add(v.Local.iSerial,1,v.Local.iSerial)
+			f.Intrinsic.Control.If(v.Global.fQty,>=,10)
+				f.Intrinsic.String.LPad(v.Local.iSerial,"0",5,v.Local.sJobSerial)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.String.LPad(v.Local.iSerial,"0",4,v.Local.sJobSerial)
+			f.Intrinsic.Control.EndIf
+			f.Intrinsic.String.Build("{0}{1}",v.Global.sJob,v.Local.sJobSerial,v.Local.sJobSerial)
+			
+			f.Data.DataTable.AddRow("dtSave","JOB",v.Global.sJob,"SUFFIX",v.Global.sSuffix,"ORDER_NO",v.Screen.fmJobRpt!txtSO.Text,"SERIAL",v.Local.sJobSerial,"DESCRIPTION",v.Screen.fmJobRpt!txtDesc.Text,"MODEL",v.Screen.fmJobRpt!txtModel.Text,"NAME_CUSTOMER",v.Screen.fmJobRpt!txtCustomer.Text,"DATE_DUE",v.Screen.fmJobRpt!dtpDue.Value,"UNITS_PRESSURE",v.Screen.fmJobRpt!ddlPU.Text,"OP_LOW",v.Screen.fmJobRpt!txtOPLow.Text,"OP_HIGH",v.Screen.fmJobRpt!txtOPHigh.Text,"OP_MAX",v.Screen.fmJobRpt!txtOPMax.Text,"PART",v.Global.sPart,"SIZE_CYL",v.Screen.fmJobRpt!ddlPSCyl.Text,"SIZE_LUBE",v.Screen.fmJobRpt!ddlPSLube.Text,"FOLLOW_DOWN",v.Local.iFD,"SHOP_ASSY_BP",v.Screen.fmJobRpt!txtBPDwg.Text,"SHOP_ASSY_BY",v.Screen.fmJobRpt!ddlBPBy.Text,"RELEASED_BY",v.Screen.fmJobRpt!ddlRel.Text,"DATE_RELEASED",v.Screen.fmJobRpt!dtpRel.Value,"PREASSYINSTR",v.Local.iPreA,"PREASSYDWG",v.Screen.fmJobRpt!txtPreInstr.Text,"POSTASSYINSTR",v.Local.iPostA,"POSTASSYDWG",v.Screen.fmJobRpt!txtPostInstr.Text,"BRACKET",v.Screen.fmJobRpt!txtBrkt.Text,"ADAPTER",v.Screen.fmJobRpt!txtAdpt.Text,"NESTS",v.Screen.fmJobRpt!txtNests.Text,"TEST_PRESSURE",v.Screen.fmJobRpt!txtTstPrs.Text,"TEST_DIA",v.Screen.fmJobRpt!txtTstDia.Text,"PADS_WEAR",v.Screen.fmJobRpt!txtWPads.Text,"NOTES_MISC",v.Screen.fmJobRpt!mltMisc.Text,"TAG_CUST",v.Local.iTag,"NAME_CUST_TAG",v.Screen.fmJobRpt!txtCTCust.Text,"NUM_CUST_TAG",v.Screen.fmJobRpt!txtCTPN.Text,"DATE_CUST_TAG",v.Screen.fmJobRpt!dtpCT.Value,"QTY_TAG",v.Screen.fmJobRpt!txtCTQty.Text,"PRESSURE_CYCLE",v.Screen.fmJobRpt!txtOPCycle.Text,"FD_ENHANCED",v.Local.iEFD,"ORIG_REWORK",v.Global.sStatus)
+	
+		f.Intrinsic.Control.Next(v.Local.i)
+		
+		f.Data.DataTable.SaveToDB("dtSave","conx","GCG_6665_JOB_RPT","PART*!*SERIAL*!*ORIG_REWORK",256)
+	
+	f.Intrinsic.Control.Else
+
+'CREATE SINGLE REPORT IF THE JOB IS NOT SERIALIZED
+		f.Intrinsic.Math.Add(v.Local.iSerial,1,v.Local.iSerial)
+		f.Intrinsic.Control.If(v.Global.fQty,>=,10)
+			f.Intrinsic.String.LPad(v.Local.iSerial,"0",5,v.Local.sJobSerial)
+		f.Intrinsic.Control.Else
+			f.Intrinsic.String.LPad(v.Local.iSerial,"0",4,v.Local.sJobSerial)
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.String.Build("{0}{1}",v.Global.sJob,v.Local.sJobSerial,v.Local.sJobSerial)
+		
+		f.Data.DataTable.AddRow("dtSave","JOB",v.Global.sJob,"SUFFIX",v.Global.sSuffix,"ORDER_NO",v.Screen.fmJobRpt!txtSO.Text,"SERIAL",v.Local.sJobSerial,"DESCRIPTION",v.Screen.fmJobRpt!txtDesc.Text,"MODEL",v.Screen.fmJobRpt!txtModel.Text,"NAME_CUSTOMER",v.Screen.fmJobRpt!txtCustomer.Text,"DATE_DUE",v.Screen.fmJobRpt!dtpDue.Value,"UNITS_PRESSURE",v.Screen.fmJobRpt!ddlPU.Text,"OP_LOW",v.Screen.fmJobRpt!txtOPLow.Text,"OP_HIGH",v.Screen.fmJobRpt!txtOPHigh.Text,"OP_MAX",v.Screen.fmJobRpt!txtOPMax.Text,"PART",v.Global.sPart,"SIZE_CYL",v.Screen.fmJobRpt!ddlPSCyl.Text,"SIZE_LUBE",v.Screen.fmJobRpt!ddlPSLube.Text,"FOLLOW_DOWN",v.Local.iFD,"SHOP_ASSY_BP",v.Screen.fmJobRpt!txtBPDwg.Text,"SHOP_ASSY_BY",v.Screen.fmJobRpt!ddlBPBy.Text,"RELEASED_BY",v.Screen.fmJobRpt!ddlRel.Text,"DATE_RELEASED",v.Screen.fmJobRpt!dtpRel.Value,"PREASSYINSTR",v.Local.iPreA,"PREASSYDWG",v.Screen.fmJobRpt!txtPreInstr.Text,"POSTASSYINSTR",v.Local.iPostA,"POSTASSYDWG",v.Screen.fmJobRpt!txtPostInstr.Text,"BRACKET",v.Screen.fmJobRpt!txtBrkt.Text,"ADAPTER",v.Screen.fmJobRpt!txtAdpt.Text,"NESTS",v.Screen.fmJobRpt!txtNests.Text,"TEST_PRESSURE",v.Screen.fmJobRpt!txtTstPrs.Text,"TEST_DIA",v.Screen.fmJobRpt!txtTstDia.Text,"PADS_WEAR",v.Screen.fmJobRpt!txtWPads.Text,"NOTES_MISC",v.Screen.fmJobRpt!mltMisc.Text,"TAG_CUST",v.Local.iTag,"NAME_CUST_TAG",v.Screen.fmJobRpt!txtCTCust.Text,"NUM_CUST_TAG",v.Screen.fmJobRpt!txtCTPN.Text,"DATE_CUST_TAG",v.Screen.fmJobRpt!dtpCT.Value,"QTY_TAG",v.Screen.fmJobRpt!txtCTQty.Text,"PRESSURE_CYCLE",v.Screen.fmJobRpt!txtOPCycle.Text,"FD_ENHANCED",v.Local.iEFD,"ORIG_REWORK",v.Global.sStatus)
+		f.Data.DataTable.SaveToDB("dtSave","conx","GCG_6665_JOB_RPT","PART*!*ORIG_REWORK",256)
+		
+	f.Intrinsic.Control.EndIf
+
+'CREATE TEMPLATE FOR PART IF ONE DOES NOT EXIST
+	f.Intrinsic.String.Build("Select * from GCG_6665_JOB_RPT_TPT where rtrim(PART) = '{0}'",v.Global.sPart,v.Local.sSQL)
+	f.Data.DataTable.CreateFromSQL("dtSaveTemp","conx",v.Local.sSQL,true)
+	f.Intrinsic.Control.If(v.DataTable.dtSaveTemp.RowCount,=,0)
+		f.Data.DataTable.AddRow("dtSaveTemp","DESCRIPTION",v.Screen.fmJobRpt!txtDesc.Text,"MODEL",v.Screen.fmJobRpt!txtModel.Text,"UNITS_PRESSURE",v.Screen.fmJobRpt!ddlPU.Text,"OP_LOW",v.Screen.fmJobRpt!txtOPLow.Text,"OP_HIGH",v.Screen.fmJobRpt!txtOPHigh.Text,"OP_MAX",v.Screen.fmJobRpt!txtOPMax.Text,"PART",v.Global.sPart,"SIZE_CYL",v.Screen.fmJobRpt!ddlPSCyl.Text,"SIZE_LUBE",v.Screen.fmJobRpt!ddlPSLube.Text,"FOLLOW_DOWN",v.Local.iFD,"PREASSYINSTR",v.Local.iPreA,"PREASSYDWG",v.Screen.fmJobRpt!txtPreInstr.Text,"POSTASSYINSTR",v.Local.iPostA,"POSTASSYDWG",v.Screen.fmJobRpt!txtPostInstr.Text,"BRACKET",v.Screen.fmJobRpt!txtBrkt.Text,"ADAPTER",v.Screen.fmJobRpt!txtAdpt.Text,"NESTS",v.Screen.fmJobRpt!txtNests.Text,"TEST_PRESSURE",v.Screen.fmJobRpt!txtTstPrs.Text,"TEST_DIA",v.Screen.fmJobRpt!txtTstDia.Text,"PADS_WEAR",v.Screen.fmJobRpt!txtWPads.Text,"NOTES_MISC",v.Screen.fmJobRpt!mltMisc.Text,"QTY_TAG",v.Screen.fmJobRpt!txtCTQty.Text,"FD_ENHANCED",v.Local.iEFD,"CYCLE_PRESSURE",v.Screen.fmJobRpt!txtOPCycle.Text,"SHOP_ASSY_BP",v.Screen.fmJobRpt!txtBPDwg.Text,"SHOP_ASSY_BY",v.Screen.fmJobRpt!ddlBPBy.Text)
+		f.Data.DataTable.SaveToDB("dtSaveTemp","conx","GCG_6665_JOB_RPT_TPT","PART",256)
+		
+		f.Intrinsic.UI.Msgbox("No Job Report Template found.  Job Report Template has been created.","SUCCESS!")
+		
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.Close("dtSaveTemp")
+
+	f.Intrinsic.Control.If(v.Global.fQty,>=,10)
+		f.Intrinsic.String.Build("{0}00001",v.Global.sJob,v.Local.sSerialStart)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("{0}0001",v.Global.sJob,v.Local.sSerialStart)
+	f.Intrinsic.Control.EndIf
+	gui.fmJobRpt.txtSerial.Text(v.Local.sSerialStart)
+	
+	f.Intrinsic.UI.Msgbox("Job Report(s) have been created.","SUCCESS!")
+	
+	f.ODBC.Connection!conx.Close
+	
+	f.Intrinsic.Control.CallSub(txtSerial_LostFocus)
+
+'UPDATE EXISTING JOB REPORT TEMPLATE FOR PART
+f.Intrinsic.Control.Case("Save Job Report Template")
+
+	f.Data.DataTable.CreateFromSQL("dtSave","conx","Select * from GCG_6665_JOB_RPT_TPT where rtrim(PART) = 'ZZZZZZZZZZ'",true)
+	f.Data.DataTable.AddRow("dtSave","DESCRIPTION",v.Screen.fmJobRpt!txtDesc.Text,"MODEL",v.Screen.fmJobRpt!txtModel.Text,"UNITS_PRESSURE",v.Screen.fmJobRpt!ddlPU.Text,"OP_LOW",v.Screen.fmJobRpt!txtOPLow.Text,"OP_HIGH",v.Screen.fmJobRpt!txtOPHigh.Text,"OP_MAX",v.Screen.fmJobRpt!txtOPMax.Text,"PART",v.Global.sPart,"SIZE_CYL",v.Screen.fmJobRpt!ddlPSCyl.Text,"SIZE_LUBE",v.Screen.fmJobRpt!ddlPSLube.Text,"FOLLOW_DOWN",v.Local.iFD,"PREASSYINSTR",v.Local.iPreA,"PREASSYDWG",v.Screen.fmJobRpt!txtPreInstr.Text,"POSTASSYINSTR",v.Local.iPostA,"POSTASSYDWG",v.Screen.fmJobRpt!txtPostInstr.Text,"BRACKET",v.Screen.fmJobRpt!txtBrkt.Text,"ADAPTER",v.Screen.fmJobRpt!txtAdpt.Text,"NESTS",v.Screen.fmJobRpt!txtNests.Text,"TEST_PRESSURE",v.Screen.fmJobRpt!txtTstPrs.Text,"TEST_DIA",v.Screen.fmJobRpt!txtTstDia.Text,"PADS_WEAR",v.Screen.fmJobRpt!txtWPads.Text,"NOTES_MISC",v.Screen.fmJobRpt!mltMisc.Text,"QTY_TAG",v.Screen.fmJobRpt!txtCTQty.Text,"FD_ENHANCED",v.Local.iEFD,"CYCLE_PRESSURE",v.Screen.fmJobRpt!txtOPCycle.Text,"SHOP_ASSY_BP",v.Screen.fmJobRpt!txtBPDwg.Text,"SHOP_ASSY_BY",v.Screen.fmJobRpt!ddlBPBy.Text)
+	f.Data.DataTable.SaveToDB("dtSave","conx","GCG_6665_JOB_RPT_TPT","PART",256)
+	
+	f.Intrinsic.UI.Msgbox("Job Report Template has been saved.","SUCCESS!")
+	
+	f.ODBC.Connection!conx.Close
+	
+'SAVE TEMPLATE FOR FUTURE REPORTS WHEN ONLY A PART IS ENTERED
+f.Intrinsic.Control.Case("Create Job Report Template")
+
+	f.Data.DataTable.CreateFromSQL("dtSave","conx","Select * from GCG_6665_JOB_RPT_TPT where rtrim(PART) = 'ZZZZZZZZZZ'",true)
+	f.Data.DataTable.AddRow("dtSave","DESCRIPTION",v.Screen.fmJobRpt!txtDesc.Text,"MODEL",v.Screen.fmJobRpt!txtModel.Text,"UNITS_PRESSURE",v.Screen.fmJobRpt!ddlPU.Text,"OP_LOW",v.Screen.fmJobRpt!txtOPLow.Text,"OP_HIGH",v.Screen.fmJobRpt!txtOPHigh.Text,"OP_MAX",v.Screen.fmJobRpt!txtOPMax.Text,"PART",v.Global.sPart,"SIZE_CYL",v.Screen.fmJobRpt!ddlPSCyl.Text,"SIZE_LUBE",v.Screen.fmJobRpt!ddlPSLube.Text,"FOLLOW_DOWN",v.Local.iFD,"PREASSYINSTR",v.Local.iPreA,"PREASSYDWG",v.Screen.fmJobRpt!txtPreInstr.Text,"POSTASSYINSTR",v.Local.iPostA,"POSTASSYDWG",v.Screen.fmJobRpt!txtPostInstr.Text,"BRACKET",v.Screen.fmJobRpt!txtBrkt.Text,"ADAPTER",v.Screen.fmJobRpt!txtAdpt.Text,"NESTS",v.Screen.fmJobRpt!txtNests.Text,"TEST_PRESSURE",v.Screen.fmJobRpt!txtTstPrs.Text,"TEST_DIA",v.Screen.fmJobRpt!txtTstDia.Text,"PADS_WEAR",v.Screen.fmJobRpt!txtWPads.Text,"NOTES_MISC",v.Screen.fmJobRpt!mltMisc.Text,"QTY_TAG",v.Screen.fmJobRpt!txtCTQty.Text,"FD_ENHANCED",v.Local.iEFD,"CYCLE_PRESSURE",v.Screen.fmJobRpt!txtOPCycle.Text,"SHOP_ASSY_BP",v.Screen.fmJobRpt!txtBPDwg.Text,"SHOP_ASSY_BY",v.Screen.fmJobRpt!ddlBPBy.Text)
+	
+	f.Data.DataTable.SaveToDB("dtSave","conx","GCG_6665_JOB_RPT_TPT","PART",256)
+	
+	f.Intrinsic.UI.Msgbox("Job Report Template has been created.","SUCCESS!")
+	
+	f.ODBC.Connection!conx.Close
+
+f.Intrinsic.Control.EndSelect
+
+f.Data.DataTable.Close("dtSave")
+
+f.Intrinsic.Control.CallSub(Data_Load)
+
+'f.Intrinsic.Control.CallSub(Data_Clear)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.Data_Load.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sSQL.Declare
+v.Local.sRet.Declare
+v.Local.sCust.Declare
+v.Local.sSerial.Declare
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+'CHECK FOR ORIGINAL OR REWORK REPORT
+f.Intrinsic.String.Build("Select max(ORIG_REWORK) from GCG_6665_JOB_RPT where SERIAL = '{0}' and rtrim(PART) = '{1}'",v.Global.sSerial,v.Screen.fmJobRpt!txtDwg.Text,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+
+'IF REPORT EXISTS, BEGIN LOADING DATA AND POPULATING SCREEN
+f.Intrinsic.Control.If(v.Local.sRet,<>,"")
+
+	f.Intrinsic.Control.If(v.Global.sStatus,=,0,or,v.Local.sRet,<>,"")
+		v.Global.sStatus.Set(v.Local.sRet)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Build("Select * from GCG_6665_JOB_RPT where SERIAL = '{0}' and rtrim(PART) = '{1}' and ORIG_REWORK = '{2}'",v.Global.sSerial,v.Screen.fmJobRpt!txtDwg.Text,v.Global.sStatus,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+
+	gui.fmJobRpt.cmdSave.Caption("Save Job Report")
+	gui.fmJobRpt.cmdDelete.Caption("Delete Job Report")
+	gui.fmJobRpt.cmdDelete.Enabled(True)
+	
+	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)	
+	
+	gui.fmJobRpt.txtSO.Text(v.Local.sRet(2))
+	gui.fmJobRpt.txtDesc.Text(v.Local.sRet(4))
+	gui.fmJobRpt.txtModel.Text(v.Local.sRet(5))
+	gui.fmJobRpt.txtCustomer.Text(v.Local.sRet(6))
+	gui.fmJobRpt.dtpDue.Value(v.Local.sRet(7))
+	gui.fmJobRpt.ddlPU.Text(v.Local.sRet(8))
+	gui.fmJobRpt.txtOPLow.Text(v.Local.sRet(9))
+	gui.fmJobRpt.txtOPHigh.Text(v.Local.sRet(10))
+	gui.fmJobRpt.txtOPMax.Text(v.Local.sRet(11))
+	gui.fmJobRpt.txtDwg.Text(v.Local.sRet(12))
+	gui.fmJobRpt.ddlPSCyl.Text(v.Local.sRet(13))
+	gui.fmJobRpt.ddlPSLube.Text(v.Local.sRet(14))
+	f.Intrinsic.Control.If(v.Local.sRet(15),=,True)
+		gui.fmJobRpt.optFDY.Value(True)
+	f.Intrinsic.Control.Else
+		gui.fmJobRpt.optFDN.Value(True)
+	f.Intrinsic.Control.EndIf
+	gui.fmJobRpt.txtBPDwg.Text(v.Local.sRet(16))
+	gui.fmJobRpt.ddlBPBy.Text(v.Local.sRet(17))
+	gui.fmJobRpt.ddlRel.Text(v.Local.sRet(18))
+	gui.fmJobRpt.dtpRel.Value(v.Local.sRet(19))
+	gui.fmJobRpt.txtPreInstr.Text(v.Local.sRet(21))
+	gui.fmJobRpt.txtPostInstr.Text(v.Local.sRet(23))
+	gui.fmJobRpt.txtBrkt.Text(v.Local.sRet(24))
+	gui.fmJobRpt.txtAdpt.Text(v.Local.sRet(25))
+	gui.fmJobRpt.txtNests.Text(v.Local.sRet(26))
+	gui.fmJobRpt.txtTstPrs.Text(v.Local.sRet(27))
+	gui.fmJobRpt.txtTstDia.Text(v.Local.sRet(28))
+	gui.fmJobRpt.txtWPads.Text(v.Local.sRet(29))
+	gui.fmJobRpt.mltMisc.Text(v.Local.sRet(30))
+	f.Intrinsic.Control.If(v.Local.sRet(31),=,True)
+		gui.fmJobRpt.optTagY.Value(True)
+	f.Intrinsic.Control.Else
+		gui.fmJobRpt.optTagN.Value(True)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.String.Left(v.Local.sRet(32),13,v.Local.sCust)
+	gui.fmJobRpt.txtCTCust.Text(v.Local.sCust)
+	gui.fmJobRpt.txtCTPN.Text(v.Local.sRet(33))
+	gui.fmJobRpt.dtpCT.Value(v.Local.sRet(34))
+	gui.fmJobRpt.txtCTQty.Text(v.Local.sRet(35))
+	gui.fmJobRpt.txtOPCycle.Text(v.Local.sRet(36))
+	f.Intrinsic.Control.If(v.Local.sRet(37),=,True)
+		gui.fmJobRpt.optEFDY.Value(True)
+	f.Intrinsic.Control.Else
+		gui.fmJobRpt.optEFDN.Value(True)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.Local.sRet(38),=,1)
+		gui.fmJobRpt.optOrig.Value(True)
+	f.Intrinsic.Control.Else
+		gui.fmJobRpt.optRwrk.Value(True)
+	f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Else
+
+'IF REPORT DOESN'T EXIST, LOAD TEMPLATE FOR PART ON CURRENT JOB
+	f.Intrinsic.String.Build("Select * from GCG_6665_JOB_RPT_TPT where rtrim(PART) = '{0}'",v.Global.sPart,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	
+	f.Intrinsic.Control.If(v.Screen.fmJobRpt!txtJob.Text,=,"")
+		
+		gui.fmJobRpt.cmdSave.Caption("Save Job Report Template")
+		gui.fmJobRpt.cmdDelete.Caption("Delete Template")
+		gui.fmJobRpt.cmdDelete.Enabled(True)
+			
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+	
+		f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+		
+		gui.fmJobRpt.txtDesc.Text(v.Local.sRet(0))
+		gui.fmJobRpt.txtModel.Text(v.Local.sRet(1))
+		gui.fmJobRpt.ddlPU.Text(v.Local.sRet(2))
+		gui.fmJobRpt.txtOPLow.Text(v.Local.sRet(3))
+		gui.fmJobRpt.txtOPHigh.Text(v.Local.sRet(4))
+		gui.fmJobRpt.txtOPMax.Text(v.Local.sRet(5))
+'		gui.fmJobRpt.txtDwg.Text(v.Local.sRet(6))
+		gui.fmJobRpt.ddlPSCyl.Text(v.Local.sRet(7))
+		gui.fmJobRpt.ddlPSLube.Text(v.Local.sRet(8))
+		f.Intrinsic.Control.If(v.Local.sRet(9),=,True)
+			gui.fmJobRpt.optFDY.Value(True)
+		f.Intrinsic.Control.Else
+			gui.fmJobRpt.optFDN.Value(True)
+		f.Intrinsic.Control.EndIf
+		gui.fmJobRpt.txtPreInstr.Text(v.Local.sRet(11))
+		gui.fmJobRpt.txtPostInstr.Text(v.Local.sRet(13))
+		gui.fmJobRpt.txtBrkt.Text(v.Local.sRet(14))
+		gui.fmJobRpt.txtAdpt.Text(v.Local.sRet(15))
+		gui.fmJobRpt.txtNests.Text(v.Local.sRet(16))
+		gui.fmJobRpt.txtTstPrs.Text(v.Local.sRet(17))
+		gui.fmJobRpt.txtTstDia.Text(v.Local.sRet(18))
+		gui.fmJobRpt.txtWPads.Text(v.Local.sRet(19))
+		gui.fmJobRpt.mltMisc.Text(v.Local.sRet(20))
+		gui.fmJobRpt.txtCTQty.Text(v.Local.sRet(21))
+		f.Intrinsic.Control.If(v.Local.sRet(22),=,True)
+			gui.fmJobRpt.optEFDY.Value(True)
+		f.Intrinsic.Control.Else
+			gui.fmJobRpt.optEFDN.Value(True)
+		f.Intrinsic.Control.EndIf
+		gui.fmJobRpt.txtOPCycle.Text(v.Local.sRet(23))
+		gui.fmJobRpt.txtBPDwg.Text(v.Local.sRet(24))
+		gui.fmJobRpt.ddlBPBy.Text(v.Local.sRet(25))
+		
+		gui.fmJobRpt.ddlBPBy.Text("GSS")
+		gui.fmJobRpt.ddlRel.Text("GSS")
+	
+	f.Intrinsic.Control.Else
+		
+'IF NO JOB IS PRESENT, PREP FOR CREATING PART TEMPLATE
+		f.Intrinsic.Control.If(v.Screen.fmJobRpt!txtJob.Text,=,"")
+		
+			gui.fmJobRpt.cmdSave.Caption("Create Job Report Template")
+			gui.fmJobRpt.cmdDelete.Caption("Delete Template")
+			gui.fmJobRpt.cmdDelete.Enabled(false)
+			
+		f.Intrinsic.Control.Else
+
+'IF JOB IS PRESENT, PREP FOR CREATING REPORTS AND TEMPLATE
+			f.Intrinsic.String.Build("Select QTY_ORDER from V_JOB_HEADER where JOB = '{0}' and SUFFIX = '{1}'",v.Global.sJob,v.Global.sSuffix,v.Local.sSQL)
+			f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Global.fQty)
+		
+			f.Intrinsic.Control.If(v.Global.fQty,>=,10)
+			
+				f.Intrinsic.String.Build("{0}00001",v.Global.sJob,v.Local.sSerial)
+			
+			f.Intrinsic.Control.Else
+			
+				f.Intrinsic.String.Build("{0}0001",v.Global.sJob,v.Local.sSerial)
+			
+			f.Intrinsic.Control.EndIf
+			
+			gui.fmJobRpt.txtSerial.Text(v.Local.sSerial)
+		
+			gui.fmJobRpt.cmdSave.Caption("Create Job Report(s)")
+			gui.fmJobRpt.cmdDelete.Caption("Delete Job Report")
+			gui.fmJobRpt.cmdDelete.Enabled(False)
+			
+		f.Intrinsic.Control.EndIf
+		
+	f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.EndIf
+
+f.ODBC.Connection!conx.Close
+
+'CHECK FOR SERIALS AND LOAD OTHER SERIALS ON THE JOB
+f.Intrinsic.Control.CallSub(Serial_Load)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.Data_Load.End
+
+Program.Sub.Data_Clear.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+gui.fmJobRpt.txtJob.Text("")
+v.Global.sJob.Set("")
+v.Global.sSuffix.Set("")
+gui.fmJobRpt.dtpDue.Value(v.Ambient.Date)
+gui.fmJobRpt.txtCustomer.Text("")
+gui.fmJobRpt.txtDesc.Text("")
+gui.fmJobRpt.frmAssyBP.Text("")
+gui.fmJobRpt.ddlBPBy.Text("")
+gui.fmJobRpt.txtSO.Text("")
+v.Global.sOrderNo.Set("")
+gui.fmJobRpt.txtModel.Text("")
+gui.fmJobRpt.optOrig.Value(True)
+v.Global.sStatus.Set(0)
+gui.fmJobRpt.txtSerial.Text("")
+v.Global.sSerial.Set("")
+gui.fmJobRpt.txtDwg.Text("")
+v.Global.sPart.Set("")
+gui.fmJobRpt.txtPreInstr.Text("")
+gui.fmJobRpt.txtPostInstr.Text("")
+gui.fmJobRpt.txtCTQty.Text("1")
+gui.fmJobRpt.optTagN.Value(True)
+gui.fmJobRpt.txtCTCust.Text("")
+gui.fmJobRpt.txtCTPN.Text("")
+gui.fmJobRpt.dtpCT.Value("1/1/1900")
+gui.fmJobRpt.optFDN.Value(True)
+gui.fmJobRpt.txtBrkt.Text("")
+gui.fmJobRpt.txtAdpt.Text("")
+gui.fmJobRpt.txtTstPrs.Text("")
+gui.fmJobRpt.txtTstDia.Text("")
+gui.fmJobRpt.txtNests.Text("")
+gui.fmJobRpt.txtWPads.Text("")
+gui.fmJobRpt.mltMisc.Text("")
+gui.fmJobRpt.optEFDN.Value(True)
+gui.fmJobRpt.ddlPU.Text("")
+gui.fmJobRpt.ddlPSLube.Text("")
+gui.fmJobRpt.ddlPSCyl.Text("")
+gui.fmJobRpt.txtOPLow.Text("")
+gui.fmJobRpt.txtOPHigh.Text("")
+gui.fmJobRpt.txtOPMax.Text("")
+gui.fmJobRpt.txtOPCycle.Text("")
+gui.fmJobRpt.txtBrwSerial.Text("")
+gui.fmJobRpt.ddlRel.Text("")
+gui.fmJobRpt.dtpRel.Value(v.Ambient.Date)
+v.Global.sSerialOrig.Set("")
+
+f.Intrinsic.Control.If(v.DataTable.dtSerial.Exists)
+	f.Data.DataTable.DeleteRow("dtSerial",-1)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.Data_Clear.End
+
+Program.Sub.cmdCopy_Click.Start
+'COPIES ALL DATA ON SCREEN FOR CURRENT JOB REPORT INTO NEXT AVAILABLE SERIAL
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sSQL.Declare
+v.Local.sRet.Declare
+v.Local.sSerReq.Declare
+v.Local.sWarReq.Declare
+v.Local.iFD.Declare
+v.Local.iEFD.Declare
+v.Local.iPreA.Declare
+v.Local.iPostA.Declare
+v.Local.iTag.Declare
+v.Local.iLen.Declare
+v.Local.iSerial.Declare
+v.Local.i.Declare
+
+f.Intrinsic.String.Len(v.Screen.fmJobRpt!txtJob.Text,v.Local.iLen)
+
+f.Intrinsic.Control.If(v.Local.iLen,>,6)
+	f.Intrinsic.String.Left(v.Screen.fmJobRpt!txtJob.Text,6,v.Global.sJob)
+	f.Intrinsic.String.Right(v.Screen.fmJobRpt!txtJob.Text,3,v.Global.sSuffix)
+f.Intrinsic.Control.Else
+	v.Global.sJob.Set(v.Screen.fmJobRpt!txtJob.Text)
+	v.Global.sSuffix.Set("")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.fmJobRpt!optOrig.Value,=,True)
+	v.Global.sStatus.Set(1)
+f.Intrinsic.Control.Else
+	v.Global.sStatus.Set(2)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.fmJobRpt!optFDY.Value,=,True)
+	v.Local.iFD.Set(1)
+f.Intrinsic.Control.Else
+	v.Local.iFD.Set(0)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.fmJobRpt!optEFDY.Value,=,True)
+	v.Local.iEFD.Set(1)
+f.Intrinsic.Control.Else
+	v.Local.iEFD.Set(0)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.fmJobRpt!txtPreInstr.Text,<>,"")
+	v.Local.iPreA.Set(1)
+f.Intrinsic.Control.Else
+	v.Local.iPreA.Set(0)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.fmJobRpt!txtPostInstr.Text,<>,"")
+	v.Local.iPostA.Set(1)
+f.Intrinsic.Control.Else
+	v.Local.iPostA.Set(0)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.fmJobRpt!optTagY.Value,=,True)
+	v.Local.iTag.Set(1)
+f.Intrinsic.Control.Else
+	v.Local.iTag.Set(0)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.DataTable.dtSave.Exists)
+	f.Data.DataTable.Close("dtSave")
+f.Intrinsic.Control.EndIf
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+f.Intrinsic.String.Build("Select max(SERIAL)+1 as SERIAL from GCG_6665_JOB_RPT where JOB = '{0}' and SUFFIX = '{1}' and rtrim(PART) = '{2}'",v.Global.sJob,v.Global.sSuffix,v.Global.sPart,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+
+f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.not)
+
+	f.Data.DataTable.CreateFromSQL("dtSave","conx","Select * from GCG_6665_JOB_RPT where SERIAL = '999999999'",true)
+	
+	f.Data.DataTable.AddRow("dtSave","JOB",v.Global.sJob,"SUFFIX",v.Global.sSuffix,"ORDER_NO",v.Screen.fmJobRpt!txtSO.Text,"SERIAL",v.Local.sRet,"DESCRIPTION",v.Screen.fmJobRpt!txtDesc.Text,"MODEL",v.Screen.fmJobRpt!txtModel.Text,"NAME_CUSTOMER",v.Screen.fmJobRpt!txtCustomer.Text,"DATE_DUE",v.Screen.fmJobRpt!dtpDue.Value,"UNITS_PRESSURE",v.Screen.fmJobRpt!ddlPU.Text,"OP_LOW",v.Screen.fmJobRpt!txtOPLow.Text,"OP_HIGH",v.Screen.fmJobRpt!txtOPHigh.Text,"OP_MAX",v.Screen.fmJobRpt!txtOPMax.Text,"PART",v.Global.sPart,"SIZE_CYL",v.Screen.fmJobRpt!ddlPSCyl.Text,"SIZE_LUBE",v.Screen.fmJobRpt!ddlPSLube.Text,"FOLLOW_DOWN",v.Local.iFD,"SHOP_ASSY_BP",v.Screen.fmJobRpt!txtBPDwg.Text,"SHOP_ASSY_BY",v.Screen.fmJobRpt!ddlBPBy.Text,"RELEASED_BY",v.Screen.fmJobRpt!ddlRel.Text,"DATE_RELEASED",v.Screen.fmJobRpt!dtpRel.Value,"PREASSYINSTR",v.Local.iPreA,"PREASSYDWG",v.Screen.fmJobRpt!txtPreInstr.Text,"POSTASSYINSTR",v.Local.iPostA,"POSTASSYDWG",v.Screen.fmJobRpt!txtPostInstr.Text,"BRACKET",v.Screen.fmJobRpt!txtBrkt.Text,"ADAPTER",v.Screen.fmJobRpt!txtAdpt.Text,"NESTS",v.Screen.fmJobRpt!txtNests.Text,"TEST_PRESSURE",v.Screen.fmJobRpt!txtTstPrs.Text,"TEST_DIA",v.Screen.fmJobRpt!txtTstDia.Text,"PADS_WEAR",v.Screen.fmJobRpt!txtWPads.Text,"NOTES_MISC",v.Screen.fmJobRpt!mltMisc.Text,"TAG_CUST",v.Local.iTag,"NAME_CUST_TAG",v.Screen.fmJobRpt!txtCTCust.Text,"NUM_CUST_TAG",v.Screen.fmJobRpt!txtCTPN.Text,"DATE_CUST_TAG",v.Screen.fmJobRpt!dtpCT.Value,"QTY_TAG",v.Screen.fmJobRpt!txtCTQty.Text,"PRESSURE_CYCLE",v.Screen.fmJobRpt!txtOPCycle.Text,"FD_ENHANCED",v.Local.iEFD,"ORIG_REWORK",v.Global.sStatus)
+	f.Data.DataTable.SaveToDB("dtSave","conx","GCG_6665_JOB_RPT","PART*!*SERIAL*!*ORIG_REWORK",256)
+	
+	f.Data.DataTable.Close("dtSave")
+
+f.Intrinsic.Control.Else
+
+	f.Intrinsic.UI.Msgbox("No Job Reports set for currently selected Job.","ERROR!")
+	
+f.Intrinsic.Control.EndIf
+
+f.ODBC.Connection!conx.Close
+
+gui.fmJobRpt.txtSerial.Text(v.Local.sRet)
+
+f.Intrinsic.Control.CallSub(txtSerial_LostFocus)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdCopy_Click.End
+
+Program.Sub.cmdDelete_Click.Start
+'DELETES CURRENTLY LOADED JOB REPORT
+f.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+v.Local.sRet.Declare
+v.Local.sSQL.Declare
+
+f.Intrinsic.UI.Msgbox("Are you sure you want to delete this Job Report?","WARNING!",4,v.Local.sRet)
+
+	f.Intrinsic.Control.If(v.Local.sRet,=,v.Ambient.MsgBoxYes)	
+		
+		f.ODBC.Connection!conx.OpenCompanyConnection
+		
+		F.Intrinsic.String.Build("DELETE from GCG_6665_JOB_RPT where SERIAL = '{0}' and rtrim(PART) = '{1}' and ORIG_REWORK = '{2}'",v.Global.sSerial,v.Screen.fmJobRpt!txtDwg.Text,v.Global.sStatus,v.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		
+		f.ODBC.Connection!conx.Close
+		
+		f.Intrinsic.Control.CallSub(Data_Clear)
+		
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdDelete_Click.End
+
+Program.Sub.cmdPrint_Click.Start
+'PRINTS FORM FOR JOB REPORT CURRENTLY SELECTED OR ALL SERIALS RELATED IF SELECTED
+f.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+v.Local.sBI.Declare
+v.Local.sName.Declare
+v.Local.sParam.Declare
+v.Local.iLen.Declare
+v.Local.sSerial.Declare
+v.Local.i.Declare
+v.Local.sSQL.Declare
+v.Local.sMin.Declare
+v.Local.sMax.Declare
+
+f.Intrinsic.String.Len(v.Screen.fmJobRpt!txtJob.Text,v.Local.iLen)
+
+f.Intrinsic.Control.If(v.Local.iLen,>,6)
+	f.Intrinsic.String.Left(v.Screen.fmJobRpt!txtJob.Text,6,v.Global.sJob)
+	f.Intrinsic.String.Right(v.Screen.fmJobRpt!txtJob.Text,3,v.Global.sSuffix)
+f.Intrinsic.Control.Else
+	v.Global.sJob.Set(v.Screen.fmJobRpt!txtJob.Text)
+	v.Global.sSuffix.Set("")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.fmJobRpt!optOrig.Value,=,True)
+	v.Global.sStatus.Set(1)
+f.Intrinsic.Control.Else
+	v.Global.sStatus.Set(2)
+f.Intrinsic.Control.EndIf
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+f.Intrinsic.String.Build("Select min(SERIAL) from GCG_6665_JOB_RPT where JOB = '{0}' and SUFFIX = '{1}' and rtrim(PART) = '{2}'",v.Global.sJob,v.Global.sSuffix,v.Screen.fmJobRpt!txtDwg.Text,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sMin)
+f.Intrinsic.String.Build("Select max(SERIAL) from GCG_6665_JOB_RPT where JOB = '{0}' and SUFFIX = '{1}' and rtrim(PART) = '{2}'",v.Global.sJob,v.Global.sSuffix,v.Screen.fmJobRpt!txtDwg.Text,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sMax)
+
+f.ODBC.Connection!conx.Close
+
+f.Global.BI.GetIDFromName("GCG_6665_JOB_RPT.rpt",v.Local.sBI)
+
+f.Intrinsic.String.Split("JOB*!*SUFFIX*!*REWORK*!*SERIAL*!*SERIAL_END","*!*",v.Local.sName)
+
+f.Intrinsic.Control.If(v.Screen.fmJobRpt!chkPrintAll.Value,=,0)
+	f.Intrinsic.String.Build("{0}*!*{1}*!*{2}*!*{3}*!*{3}",v.Global.sJob,v.Global.sSuffix,v.Global.sStatus,v.Screen.fmJobRpt!txtSerial.Text,v.Local.sParam)
+f.Intrinsic.Control.Else
+	f.Intrinsic.String.Build("{0}*!*{1}*!*{2}*!*{3}*!*{4}",v.Global.sJob,v.Global.sSuffix,v.Global.sStatus,v.Local.sMin,v.Local.sMax,v.Local.sParam)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Split(v.Local.sParam,"*!*",v.Local.sParam)
+
+'f.Global.BI.PrintReport(v.Local.sBI,0,v.Local.sName,v.Local.sParam,false)
+f.Global.BI.PrintReport(v.Local.sBI,3,v.Local.sName,v.Local.sParam,"\\gss2k8dc1.gss.local\lex61024",false)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdPrint_Click.End
+
+Program.Sub.Serial_Load.Start
+'GENERATES TABLE FOR ALL SERIALS ON CURRENTLY SELECTED JOB
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sSQL.Declare
+v.Local.sRet.Declare
+
+f.Intrinsic.Control.If(v.DataTable.dtSerial.Exists)
+	f.Data.DataView.Close("dtSerial","dvSerial")
+	f.Data.DataTable.Close("dtSerial")
+f.Intrinsic.Control.EndIf
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+'f.Intrinsic.String.Build("Select * from GCG_6665_JOB_RPT where SERIAL = '{0}' and rtrim(PART) = '{1}'",v.Global.sSerial,v.Global.sPart,v.Local.sSQL)
+'f.Intrinsic.String.Build("Select * from GCG_6665_JOB_RPT where SERIAL = '{0}'",v.Global.sSerial,v.Local.sSQL)
+'f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+
+'f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.not)
+
+'	f.Intrinsic.String.Build("Select distinct SERIAL from GCG_6665_JOB_RPT where JOB = '{0}' and SUFFIX = '{1}' and rtrim(PART) = '{2}'",v.Global.sJob,v.Global.sSuffix,v.Global.sPart,v.Local.sSQL)
+	f.Intrinsic.String.Build("Select distinct SERIAL from GCG_6665_JOB_RPT where JOB = '{0}' and SUFFIX = '{1}'",v.Global.sJob,v.Global.sSuffix,v.Local.sSQL)
+	f.Data.DataTable.CreateFromSQL("dtSerial","conx",v.Local.sSQL,true)
+
+'f.Intrinsic.Control.Else
+
+'	f.Data.DataTable.Create("dtSerial",true)
+'	f.Data.DataTable.AddColumn("dtSerial","SERIAL","string")
+'	
+'f.Intrinsic.Control.EndIf
+
+f.ODBC.Connection!conx.Close
+
+f.Data.DataView.Create("dtSerial","dvSerial",22,,)
+
+f.Intrinsic.Control.CallSub(Serial_Format)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.Serial_Load.End
+
+Program.Sub.Serial_Format.Start
+'FORMATS SERIAL TABLE
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+gui.fmJobRpt.GsGcSerial.AddGridviewFromDataview("gvSerial","dtSerial","dvSerial")
+
+gui.fmJobRpt.GsGcSerial.Visible(false)
+gui.fmJobRpt.GsGcSerial.SuspendLayout()
+
+'gui.fmJobRpt.GsGcSerial.SetColumnProperty("gvSerial","","Caption","")
+'gui.fmJobRpt.GsGcSerial.SetColumnProperty("gvSerial","","HeaderFontBold","TRUE")
+'gui.fmJobRpt.GsGcSerial.SetColumnProperty("gvSerial","","HeaderHAlignment","CENTER")
+'gui.fmJobRpt.GsGcSerial.SetColumnProperty("gvSerial","","CellHAlignment","CENTER")
+'gui.fmJobRpt.GsGcSerial.SetColumnProperty("gvSerial","","ReadOnly","TRUE")
+'gui.fmJobRpt.GsGcSerial.SetColumnProperty("gvSerial","","AllowEdit","FALSE")
+'gui.fmJobRpt.GsGcSerial.SetColumnProperty("gvSerial","","VisibleIndex",v.Local.i)
+
+gui.fmJobRpt.GsGcSerial.SetColumnProperty("gvSerial","SERIAL","Caption","Related Serial #'s")
+gui.fmJobRpt.GsGcSerial.SetColumnProperty("gvSerial","SERIAL","HeaderFontBold","TRUE")
+gui.fmJobRpt.GsGcSerial.SetColumnProperty("gvSerial","SERIAL","ReadOnly","TRUE")
+gui.fmJobRpt.GsGcSerial.SetColumnProperty("gvSerial","SERIAL","AllowEdit","FALSE")
+
+gui.fmJobRpt.GsGcSerial.ResumeLayout()
+gui.fmJobRpt.GsGcSerial.Visible(true)
+
+gui.fmJobRpt.GsGcSerial.MainView("gvSerial")
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.Serial_Format.End
+
+Program.Sub.GsGcSerial_RowClick.Start
+'LOADS CLICKED SERIAL WHEN CLICKED IN GRID
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+gui.fmJobRpt.txtSerial.Text(v.DataTable.dtSerial(v.Args.RowIndex).SERIAL!FieldVal)
+v.Global.sSerial.Set(v.DataTable.dtSerial(v.Args.RowIndex).SERIAL!FieldVal)
+v.Global.sStatus.Set(0)
+f.Intrinsic.Control.CallSub(Data_Load)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.GsGcSerial_RowClick.End
+
+Program.Sub.txtJob_LostFocus.Start
+'LOADS JOB REPORTS OR TEMPLATES WHEN A JOB IS ENTERED
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sSQL.Declare
+v.Local.sRet.Declare
+v.Local.iLen.Declare
+v.Local.sJobSuf.Declare
+v.Local.sCust.Declare
+v.Local.sSerial.Declare
+
+'CHECK JOB LENGTH AND BUILD APPROPRIATELY
+f.Intrinsic.String.Len(v.Screen.fmJobRpt!txtJob.Text,v.Local.iLen)
+
+f.Intrinsic.Control.If(v.Local.iLen,>,6)
+	f.Intrinsic.String.Build("{}-{}",v.Global.sJob,v.Global.sSuffix,v.Local.sJobSuf)
+f.Intrinsic.Control.Else
+	v.Local.sJobSuf.Set(v.Global.sJob)
+f.Intrinsic.Control.EndIf
+
+'IF JOB IS PRESENT IN FIELD LOAD DATA
+F.Intrinsic.Control.If(V.Screen.fmJobRpt!txtJob.Text,<>,"")
+
+	f.ODBC.Connection!conx.OpenCompanyConnection
+	
+'CHECK JOB LENGTH AND SPLIT APPROPRIATELY
+	f.Intrinsic.Control.If(v.Local.iLen,>,6)
+		f.Intrinsic.String.Left(v.Screen.fmJobRpt!txtJob.Text,6,v.Global.sJob)
+		f.Intrinsic.String.Right(v.Screen.fmJobRpt!txtJob.Text,3,v.Global.sSuffix)
+	f.Intrinsic.Control.Else
+		v.Global.sJob.Set(v.Screen.fmJobRpt!txtJob.Text)
+		v.Global.sSuffix.Set("")
+	f.Intrinsic.Control.EndIf
+
+'CHECK FOR EXISTING JOB REPORTS AND POPULATE SCREEN
+	f.Intrinsic.String.Build("Select rtrim(left(x.PART,17)) as PART, rtrim(x.PART_DESCRIPTION) as DESCRIPTION, x.DATE_DUE, x.QTY_ORDER, x.CUSTOMER, rtrim(y.NAME_CUSTOMER) as NAME_CUSTOMER, x.SALES_ORDER from V_JOB_HEADER as x left join V_CUSTOMER_MASTER as y on x.CUSTOMER = y.CUSTOMER where JOB = '{0}' and SUFFIX = '{1}'",v.Global.sJob,v.Global.sSuffix,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+		
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+	
+		gui.fmJobRpt.cmdSave.Caption("Create Job Report(s)")
+		gui.fmJobRpt.cmdDelete.Caption("Delete Job Report")
+		gui.fmJobRpt.cmdDelete.Enabled(False)
+		f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+		
+		gui.fmJobRpt.txtDwg.Text(v.Local.sRet(0))
+		v.Global.sPart.Set(v.Local.sRet(0))
+		gui.fmJobRpt.txtDesc.Text(v.Local.sRet(1))
+		gui.fmJobRpt.dtpDue.Value(v.Local.sRet(2))
+		v.Global.dDueDate.Set(v.Local.sRet(2))
+		v.Global.fQty.Set(v.Local.sRet(3))
+		v.Global.sCustomer.Set(v.Local.sRet(4))
+		gui.fmJobRpt.txtCustomer.Text(v.Local.sRet(5))
+		f.Intrinsic.String.Left(v.Local.sRet(5),13,v.Local.sCust)
+		gui.fmJobRpt.txtCTCust.Text(v.Local.sCust)
+		f.Intrinsic.Control.If(v.Local.sRet(6),<>,"0000000")
+			v.Global.sOrderNo.Set(v.Local.sRet(6))
+		f.Intrinsic.Control.Else
+			v.Global.sOrderNo.Set("")
+		f.Intrinsic.Control.EndIf
+		gui.fmJobRpt.txtSO.Text(v.Global.sOrderNo)
+		
+		f.Intrinsic.String.Split(v.Local.sRet(1)," ",v.Local.sRet)
+		gui.fmJobRpt.txtModel.Text(v.Local.sRet(v.Local.sRet.UBound))
+		
+		f.Intrinsic.String.Build("select rtrim(CUSTOMER_PART) as CUSTOMER_PART from V_INV_CROSS_REF where rtrim(PART) = '{0}' and CUSTOMER = '{1}'",v.Global.sPart,v.Global.sCustomer,v.Local.sSQL)
+		f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+		
+		f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.not)
+			gui.fmJobRpt.txtCTPN.Text(v.Local.sRet)
+		f.Intrinsic.Control.Else
+			gui.fmJobRpt.txtCTPN.Text(v.Screen.fmJobRpt!txtModel.Text)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.Control.If(v.Global.sOrderNo,<>,"")
+			f.Intrinsic.String.Build("Select DATE_ITEM_PROM from V_ORDER_LINES where ORDER_NO = '{0}' and JOB = '{1}' and SUFFIX = '{2}'",v.Global.sOrderNo,v.Global.sJob,v.Global.sSuffix,v.Local.sSQL)
+			f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+			f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.not)
+				gui.fmJobRpt.dtpCT.Value(v.Local.sRet)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.String.Build("Select ORDER_LINE from V_ORDER_TO_WO where ORDER_NO = '{0}' and JOB = '{1}' and SUFFIX = '{2}'",v.Global.sOrderNo,v.Global.sJob,v.Global.sSuffix,v.Local.sSQL)
+				f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+				f.Intrinsic.String.Build("Select DATE_ITEM_PROM from V_ORDER_LINES where ORDER_NO = '{0}' and RECORD_NO = '{1}'",v.Global.sOrderNo,v.Local.sRet,v.Local.sSQL)
+				f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+				f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.not)
+					gui.fmJobRpt.dtpCT.Value(v.Local.sRet)
+				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.EndIf
+			gui.fmJobRpt.optTagY.Value(True)
+		f.Intrinsic.Control.Else
+			gui.fmJobRpt.optTagN.Value(True)
+		f.Intrinsic.Control.EndIf
+		
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Build("Select top 1 SERIAL from GCG_6665_JOB_RPT where JOB = '{0}' and SUFFIX = '{1}' and rtrim(PART) = '{2}'",v.Global.sJob,v.Global.sSuffix,v.Global.sPart,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.not)
+		gui.fmJobRpt.txtSerial.Text(v.Local.sRet)
+		v.Global.sSerial.Set(v.Local.sRet)
+	f.Intrinsic.Control.Else
+	
+		f.Intrinsic.String.Build("Select QTY_ORDER from V_JOB_HEADER where JOB = '{0}' and SUFFIX = '{1}'",v.Global.sJob,v.Global.sSuffix,v.Local.sSQL)
+		f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Global.fQty)
+	
+		f.Intrinsic.Control.If(v.Global.fQty,>=,10)
+		
+			f.Intrinsic.String.Build("{0}00001",v.Global.sJob,v.Local.sSerial)
+		
+		f.Intrinsic.Control.Else
+		
+			f.Intrinsic.String.Build("{0}0001",v.Global.sJob,v.Local.sSerial)
+		
+		f.Intrinsic.Control.EndIf
+		
+		gui.fmJobRpt.txtSerial.Text(v.Local.sSerial)
+		v.Global.sSerial.Set(v.Local.sSerial)
+			
+	f.Intrinsic.Control.EndIf
+	
+	f.ODBC.Connection!conx.Close
+		
+	f.Intrinsic.Control.CallSub(Data_Load)
+	
+F.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.txtJob_LostFocus.End
+
+Program.Sub.txtSerial_LostFocus.Start
+'LOAD DATA FOR SELECTED SERIAL WHEN VALUE IS ENTERED IN FIELD AND FOCUS IS LOST
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sSQL.Declare
+v.Local.sRet.Declare
+
+f.Intrinsic.Control.If(v.Global.sSerial,<>,v.Screen.fmJobRpt!txtSerial.Text,and,v.Screen.fmJobRpt!txtSerial.Text,<>,"")
+
+	f.ODBC.Connection!conx.OpenCompanyConnection
+
+	f.Intrinsic.String.Build("Select * from GCG_6665_JOB_RPT where SERIAL = '{0}'",v.Screen.fmJobRpt!txtSerial.Text,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.not)
+	
+		v.Global.sSerialOrig.Set("")
+	
+	f.Intrinsic.Control.Else
+	
+		v.Global.sSerialOrig.Set(v.Global.sSerial)
+	
+	f.Intrinsic.Control.EndIf
+	
+	f.ODBC.Connection!conx.Close
+
+	v.Global.sSerial.Set(v.Screen.fmJobRpt!txtSerial.Text)
+	f.Intrinsic.Control.CallSub(Data_Load)
+	
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.txtSerial_LostFocus.End
+
+Program.Sub.txtDwg_LostFocus.Start
+'LOAD PART TEMPLATE WHEN VALUE IS ENTERED IN FIELD AND FOCUS IS LOST
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+f.Intrinsic.Control.If(v.Global.sPart,<>,v.Screen.fmJobRpt!txtDwg.Text,and,v.Screen.fmJobRpt!txtDwg.Text,<>,"")
+	v.Global.sPart.Set(v.Screen.fmJobRpt!txtDwg.Text)
+	f.Intrinsic.Control.CallSub(Data_Load)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.txtDwg_LostFocus.End
+
+Program.Sub.DDL_Populate.Start
+'POPULATE DROP DOWN LISTS FOR ALL REQUIRED CONTROLS
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sRet.Declare
+v.Local.i.Declare
+
+gui.fmJobRpt.ddlBPBy.ClearItems
+gui.fmJobRpt.ddlPSCyl.ClearItems
+gui.fmJobRpt.ddlPSLube.ClearItems
+gui.fmJobRpt.ddlPU.ClearItems
+gui.fmJobRpt.ddlRel.ClearItems
+
+gui.fmJobRpt.ddlPU.AddItem("")
+gui.fmJobRpt.ddlPU.AddItem("BAR")
+gui.fmJobRpt.ddlPU.AddItem("MPa")
+gui.fmJobRpt.ddlPU.AddItem("PSI")
+
+gui.fmJobRpt.ddlPSLube.AddItem("")
+gui.fmJobRpt.ddlPSLube.AddItem("1/8 NPT")
+gui.fmJobRpt.ddlPSLube.AddItem("3/8 NPT")
+gui.fmJobRpt.ddlPSLube.AddItem("1/8 BSPP")
+gui.fmJobRpt.ddlPSLube.AddItem("1/4 BSPP")
+gui.fmJobRpt.ddlPSLube.AddItem("3/8 BSPP")
+gui.fmJobRpt.ddlPSLube.AddItem("1/2 BSPP")
+gui.fmJobRpt.ddlPSLube.AddItem("1/8 BSPT")
+gui.fmJobRpt.ddlPSLube.AddItem("3/16 FTG")
+gui.fmJobRpt.ddlPSLube.AddItem("O-RING")
+gui.fmJobRpt.ddlPSLube.AddItem("ISO 6149")
+gui.fmJobRpt.ddlPSLube.AddItem("#10-32")
+gui.fmJobRpt.ddlPSLube.AddItem("M8x1")
+
+gui.fmJobRpt.ddlPSCyl.AddItem("")
+gui.fmJobRpt.ddlPSCyl.AddItem("1/8 NPT")
+gui.fmJobRpt.ddlPSCyl.AddItem("3/8 NPT")
+gui.fmJobRpt.ddlPSCyl.AddItem("1/4 NPT")
+gui.fmJobRpt.ddlPSCyl.AddItem("1/2 NPT")
+gui.fmJobRpt.ddlPSCyl.AddItem("#4 SAE")
+gui.fmJobRpt.ddlPSCyl.AddItem("#6 SAE")
+gui.fmJobRpt.ddlPSCyl.AddItem("1/8 BSPP")
+gui.fmJobRpt.ddlPSCyl.AddItem("1/4 BSPP")
+gui.fmJobRpt.ddlPSCyl.AddItem("3/8 BSPP")
+gui.fmJobRpt.ddlPSCyl.AddItem("1/2 BSPP")
+gui.fmJobRpt.ddlPSCyl.AddItem("1/8 BSPT")
+gui.fmJobRpt.ddlPSCyl.AddItem("1/4 NPT & 1/8 NPT")
+gui.fmJobRpt.ddlPSCyl.AddItem("ISO 6149-1")
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+f.ODBC.Connection!conx.ExecuteAndReturn("Select rtrim(EMPL_INITIALS) from V_EMPLOYEE_MSTR where EMPL_INITIALS <> '' order by EMPL_INITIALS ASC",v.Local.sRet)
+
+f.ODBC.Connection!conx.Close
+
+gui.fmJobRpt.ddlBPBy.AddItem("GSS")
+gui.fmJobRpt.ddlRel.AddItem("GSS")
+
+f.Intrinsic.String.Split(v.Local.sRet,"#$#",v.Local.sRet)
+
+f.Intrinsic.Control.For(v.Local.i,0,v.Local.sRet.UBound,1)
+	gui.fmJobRpt.ddlBPBy.AddItem(v.Local.sRet(v.Local.i))
+	gui.fmJobRpt.ddlRel.AddItem(v.Local.sRet(v.Local.i))
+f.Intrinsic.Control.Next(v.Local.i)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.DDL_Populate.End
+
+Program.Sub.cmdBrwSerial_Click.Start
+'CREATES CUSTOM BROWSER FOR ALL JOB REPORTS BY SERIAL
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sTitle.Declare
+v.Local.iWidth.Declare
+v.Local.sRet.Declare
+v.Local.sJobSuff.Declare
+
+f.Intrinsic.String.Split("JOB*!*SUFFIX*!*PART*!*DESCRIPTION*!*SERIAL*!*REWORK","*!*",v.Local.sTitle)
+f.Intrinsic.String.Split("400*!*300*!*800*!*1000*!*800*!*300","*!*",v.Local.iWidth)
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+F.Intrinsic.UI.Browser("Job Report Serial Browser","conx","select JOB, rtrim(SUFFIX) as SUFFIX, rtrim(left(PART,17)) as PART, rtrim(DESCRIPTION) as DESCRIPTION, SERIAL, if(ORIG_REWORK = '2', 'Y', '') as REWORK from GCG_6665_JOB_RPT order by SERIAL DESC",v.Local.sTitle,v.Local.iWidth,v.Local.sRet)
+
+f.ODBC.Connection!conx.Close
+
+f.Intrinsic.Control.If(v.Local.sRet,<>,"***CANCEL***")
+
+	f.Intrinsic.Control.CallSub(Data_Clear)
+
+	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet(1).Trim,<>,"")
+		f.Intrinsic.String.Build("{0}-{1}",v.Local.sRet(0).Trim,v.Local.sRet(1).Trim,v.Local.sJobSuff)
+	f.Intrinsic.Control.Else
+		v.Local.sJobSuff.Set(v.Local.sRet(0).Trim)
+	f.Intrinsic.Control.EndIf
+	gui.fmJobRpt.txtJob.Text(v.Local.sJobSuff)
+	v.Global.sJob.Set(v.Local.sRet(0).Trim)
+	v.Global.sSuffix.Set(v.Local.sRet(1).Trim)
+	gui.fmJobRpt.txtDwg.Text(v.Local.sRet(2).Trim)
+	v.Global.sPart.Set(v.Local.sRet(2).Trim)
+	gui.fmJobRpt.txtSerial.Text(v.Local.sRet(4))
+	
+	f.Intrinsic.Control.If(v.Local.sRet(5),=,"Y")
+		gui.fmJobRpt.optRwrk.Value(True)
+		v.Global.sStatus.Set(2)
+	f.Intrinsic.Control.Else
+		gui.fmJobRpt.optOrig.Value(True)
+		v.Global.sStatus.Set(1)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.CallSub(txtSerial_LostFocus)
+	
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdBrwSerial_Click.End
+
+Program.Sub.cmdBrwPart_Click.Start
+'CREATES CUSTOM BROWSER FOR ALL PART TEMPLATES
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sRet.Declare
+v.Local.sPart.Declare
+v.Local.sTitle.Declare
+v.Local.iWidth.Declare
+
+f.Intrinsic.String.Split("PART*!*DESCRIPTION*!*MODEL","*!*",v.Local.sTitle)
+f.Intrinsic.String.Split("600*!*1200*!*600","*!*",v.Local.iWidth)
+
+'f.Intrinsic.UI.Browser(100,"",v.Local.sRet)
+
+'f.Intrinsic.Control.If(v.Local.sRet,<>,"***CANCEL***")
+
+'	f.Intrinsic.Control.If(v.Screen.fmJobRpt!txtJob.Text,=,"")
+
+'		f.Intrinsic.Control.CallSub(Data_Clear)
+'		
+'	f.Intrinsic.Control.EndIf
+'	
+'	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+'	f.Intrinsic.String.Left(v.Local.sRet(0),17,v.Local.sPart)
+'	gui.fmJobRpt.txtDwg.Text(v.Local.sPart.Trim)
+'	gui.fmJobRpt.txtDesc.Text(v.Local.sRet(3).Trim)
+'	f.Intrinsic.String.Split(v.Local.sRet(3).Trim," ",v.Local.sRet)
+'	gui.fmJobRpt.txtModel.Text(v.Local.sRet(v.Local.sRet.UBound).Trim)
+'	
+'	f.Intrinsic.Control.CallSub(txtDwg_LostFocus)
+'	
+'f.Intrinsic.Control.EndIf
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+F.Intrinsic.UI.Browser("Job Report Part Template Browser","conx","select PART, DESCRIPTION, MODEL from GCG_6665_JOB_RPT_TPT order by PART ASC",v.Local.sTitle,v.Local.iWidth,v.Local.sRet)
+
+f.ODBC.Connection!conx.Close
+
+f.Intrinsic.Control.If(v.Local.sRet,<>,"***CANCEL***")
+
+	f.Intrinsic.Control.If(v.Screen.fmJobRpt!txtJob.Text,=,"")
+
+		f.Intrinsic.Control.CallSub(Data_Clear)
+		
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+	f.Intrinsic.String.Left(v.Local.sRet(0),17,v.Local.sPart)
+	gui.fmJobRpt.txtDwg.Text(v.Local.sPart.Trim)
+	gui.fmJobRpt.txtDesc.Text(v.Local.sRet(1).Trim)
+	f.Intrinsic.String.Split(v.Local.sRet(1).Trim," ",v.Local.sRet)
+	gui.fmJobRpt.txtModel.Text(v.Local.sRet(v.Local.sRet.UBound).Trim)
+	
+	f.Intrinsic.Control.CallSub(txtDwg_LostFocus)
+	
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdBrwPart_Click.End
+
+Program.Sub.cmdBrwJob_Click.Start
+'CREATES CUSTOM BROWSER FOR ALL JOBS WITH OR REQUIRING REPORTS
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sTitle.Declare
+v.Local.iWidth.Declare
+v.Local.sRet.Declare
+v.Local.sJob.Declare
+v.Local.sJobSuff.Declare
+v.Local.sPart.Declare
+
+f.Intrinsic.String.Split("JOB*!*SUF*!*PART*!*DESCRIPTION*!*QTY*!*DATE_DUE*!*CUSTOMER*!*JR","*!*",v.Local.sTitle)
+f.Intrinsic.String.Split("350*!*200*!*700*!*800*!*450*!*450*!*300*!*200","*!*",v.Local.iWidth)
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+F.Intrinsic.UI.Browser("Job Report Work Order Browser","conx","select x.JOB, rtrim(x.SUFFIX), rtrim(left(x.PART,17)) as PART, x.PART_DESCRIPTION, x.QTY_ORDER, x.DATE_DUE, x.CUSTOMER, if(z.SERIAL <> '','Y','') as JR_EXIST from V_JOB_HEADER as x left join V_INVENTORY_MSTR as y on rtrim(y.PART) = rtrim(x.PART) left join GCG_6665_JOB_RPT as z on z.JOB = x.JOB and z.SUFFIX = x.SUFFIX where (x.FLAG_SERIALIZE = 'Y' or y.FLAG_SERIALIZE = 'Y') order by x.JOB DESC",v.Local.sTitle,v.Local.iWidth,v.Local.sRet)
+
+f.ODBC.Connection!conx.Close
+
+f.Intrinsic.Control.If(v.Local.sRet,<>,"***CANCEL***")
+
+	f.Intrinsic.Control.CallSub(Data_Clear)
+
+	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+	
+	f.Intrinsic.Control.If(v.Local.sRet(1),<>,"")
+		f.Intrinsic.String.Build("{0}-{1}",v.Local.sRet(0),v.Local.sRet(1),v.Local.sJob)
+	f.Intrinsic.Control.Else
+		v.Local.sJob.Set(v.Local.sRet(0))
+	f.Intrinsic.Control.EndIf
+	
+	gui.fmJobRpt.txtJob.Text(v.Local.sJob.Trim)
+	v.Global.sJob.Set(v.Local.sRet(0).Trim)
+	v.Global.sSuffix.Set(v.Local.sRet(1).Trim)
+	f.Intrinsic.String.Left(v.Local.sRet(2),17,v.Local.sPart)
+	gui.fmJobRpt.txtDwg.Text(v.Local.sPart.Trim)
+	v.Local.sPart.Set(v.Local.sPart.Trim)
+	
+	f.Intrinsic.Control.CallSub(txtJob_LostFocus)
+	
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdBrwJob_Click.End
+
+Program.Sub.cmdBrwSO_Click.Start
+'CREATES CUSTOM BROWSER FOR ALL JOB REPORTS BY SALES ORDER
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sTitle.Declare
+v.Local.iWidth.Declare
+v.Local.sRet.Declare
+v.Local.sJobSuff.Declare
+
+f.Intrinsic.String.Split("ORDER*!*JOB*!*SUFFIX*!*PART*!*DESCRIPTION*!*SERIAL*!*REWORK","*!*",v.Local.sTitle)
+f.Intrinsic.String.Split("800*!*400*!*300*!*800*!*1000*!*800*!*300","*!*",v.Local.iWidth)
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+F.Intrinsic.UI.Browser("Job Report Sales Order Serial Browser","conx","select ORDER_NO, JOB, rtrim(SUFFIX) as SUFFIX, rtrim(PART) as PART, rtrim(DESCRIPTION) as DESCRIPTION, SERIAL, if(ORIG_REWORK = '2', 'Y', '') as REWORK from GCG_6665_JOB_RPT where ORDER_NO <> '' order by ORDER_NO DESC",v.Local.sTitle,v.Local.iWidth,v.Local.sRet)
+
+f.ODBC.Connection!conx.Close
+
+f.Intrinsic.Control.If(v.Local.sRet,<>,"***CANCEL***")
+
+	f.Intrinsic.Control.CallSub(Data_Clear)
+
+	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet(2).Trim,<>,"")
+		f.Intrinsic.String.Build("{0}-{1}",v.Local.sRet(1).Trim,v.Local.sRet(2).Trim,v.Local.sJobSuff)
+	f.Intrinsic.Control.Else
+		v.Local.sJobSuff.Set(v.Local.sRet(1).Trim)
+	f.Intrinsic.Control.EndIf
+	gui.fmJobRpt.txtSO.Text(v.Local.sRet(0))
+	gui.fmJobRpt.txtJob.Text(v.Local.sJobSuff)
+	v.Global.sJob.Set(v.Local.sRet(1).Trim)
+	v.Global.sSuffix.Set(v.Local.sRet(2).Trim)
+	gui.fmJobRpt.txtDwg.Text(v.Local.sRet(3).Trim)
+	v.Global.sPart.Set(v.Local.sRet(3).Trim)
+	gui.fmJobRpt.txtSerial.Text(v.Local.sRet(5))
+	
+	f.Intrinsic.Control.If(v.Local.sRet(5),=,"Y")
+		gui.fmJobRpt.optRwrk.Value(True)
+		v.Global.sStatus.Set(2)
+	f.Intrinsic.Control.Else
+		gui.fmJobRpt.optOrig.Value(True)
+		v.Global.sStatus.Set(1)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.CallSub(txtSerial_LostFocus)
+	
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdBrwSO_Click.End
+
+Program.Sub.txtSO_LostFocus.Start
+'POPULATE CUSTOMER INFORMATION ON SCREEN WHEN FIELD IS POPULATED AND HAS LOST FOCUS
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+v.Local.sSQL.Declare
+v.Local.sRet.Declare
+v.Local.sDate.Declare
+v.Local.sPart.Declare
+v.Local.sCustomer.Declare
+
+f.Intrinsic.String.Format(v.Screen.fmJobRpt!dtpCT.Value,"MM/DD/YYYY",v.Local.sDate)
+f.Intrinsic.Control.If(v.Local.sDate,=,"01/01/1900")
+
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+f.Intrinsic.String.Build("Select x.DATE_DUE, y.NAME_CUSTOMER, x.CUSTOMER from V_ORDER_HEADER as x left join V_CUSTOMER_MASTER as y on y.CUSTOMER = x.CUSTOMER where ORDER_NO = '{0}'",v.Screen.fmJobRpt!txtSO.Text,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+
+f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.not)
+
+	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+	gui.fmJobRpt.dtpCT.Value(v.Local.sRet(0))
+	gui.fmJobRpt.txtCustomer.Text(v.Local.sRet(1))
+	f.Intrinsic.String.Left(v.Local.sRet(1),13,v.Local.sCustomer)
+	gui.fmJobRpt.txtCTCust.Text(v.Local.sCustomer)
+	gui.fmJobRpt.optTagY.Value(true)
+	v.Global.sOrderNo.Set(v.Screen.fmJobRpt!txtSO.Text)
+	v.Global.sCustomer.Set(v.Local.sRet(2))
+	
+	f.Intrinsic.String.Build("select rtrim(CUSTOMER_PART) as CUSTOMER_PART from V_INV_CROSS_REF where rtrim(PART) = '{0}' and CUSTOMER = '{1}'",v.Screen.fmJobRpt!txtDwg.Text,v.Global.sCustomer,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+		
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.not)
+		gui.fmJobRpt.txtCTPN.Text(v.Local.sRet)
+	f.Intrinsic.Control.Else
+		gui.fmJobRpt.txtCTPN.Text(v.Screen.fmJobRpt!txtModel.Text)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Global.sJob,<>,"")
+	
+		f.Intrinsic.String.Build("Select rtrim(PART) from V_JOB_HEADER where JOB = '{0}' and SUFFIX = '{1}'",v.Global.sJob,v.Global.sSuffix,v.Local.sSQL)
+		f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sPart)
+		
+		f.Intrinsic.String.Build("select rtrim(CUSTOMER_PART) as CUSTOMER_PART from V_INV_CROSS_REF where rtrim(PART) = '{0}' and CUSTOMER = '{1}'",v.Local.sPart,v.Global.sCustomer,v.Local.sSQL)
+		f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+		
+		f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.not)
+			gui.fmJobRpt.txtCTPN.Text(v.Local.sRet)
+		f.Intrinsic.Control.Else
+			gui.fmJobRpt.txtCTPN.Text(v.Screen.fmJobRpt!txtModel.Text)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.Control.If(v.Global.sOrderNo,<>,"")
+			f.Intrinsic.String.Build("Select DATE_ITEM_PROM from V_ORDER_LINES where ORDER_NO = '{0}' and JOB = '{1}' and SUFFIX = '{2}'",v.Global.sOrderNo,v.Global.sJob,v.Global.sSuffix,v.Local.sSQL)
+			f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+			f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.not)
+				gui.fmJobRpt.dtpCT.Value(v.Local.sRet)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.String.Build("Select ORDER_LINE from V_ORDER_TO_WO where ORDER_NO = '{0}' and JOB = '{1}' and SUFFIX = '{2}'",v.Global.sOrderNo,v.Global.sJob,v.Global.sSuffix,v.Local.sSQL)
+				f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+				f.Intrinsic.String.Build("Select DATE_ITEM_PROM from V_ORDER_LINES where ORDER_NO = '{0}' and RECORD_NO = '{1}'",v.Global.sOrderNo,v.Local.sRet,v.Local.sSQL)
+				f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+				f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.not)
+					gui.fmJobRpt.dtpCT.Value(v.Local.sRet)
+				f.Intrinsic.Control.Else
+					f.Intrinsic.String.Build("Select top 1 DATE_ITEM_PROM from V_ORDER_LINES where QTY_BO > '0' and ORDER_NO = '{0}' and PART = '{1}'",v.Global.sOrderNo,v.Local.sPart,v.Local.sSQL)
+					f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+					f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.not)
+						gui.fmJobRpt.dtpCT.Value(v.Local.sRet)
+					f.Intrinsic.Control.EndIf
+				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Else
+
+	gui.fmJobRpt.optTagN.Value(True)
+		
+f.Intrinsic.Control.EndIf
+
+f.ODBC.Connection!conx.Close
+
+f.Intrinsic.Control.EndIf
+
+gui.fmJobRpt.txtCTCust.SetFocus
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry
+Program.Sub.txtSO_LostFocus.End
+
+Program.Sub.txtSerial_Change.Start
+Program.Sub.txtSerial_Change.End
+
+Program.Sub.txtOPLow_LostFocus.Start
+'CALCULATE AND POPULATE MEAN VALUE FOR OPCYCLE WHEN FOCUS IS LOST
+v.Local.fDiff.Declare
+v.Local.fValue.Declare
+v.Local.iMean.Declare
+
+f.Intrinsic.Control.If(v.Screen.fmJobRpt!txtOPLow.Text,<>,"",and,v.Screen.fmJobRpt!txtOPHigh.Text,<>,"")
+
+f.Intrinsic.Math.Sub(v.Screen.fmJobRpt!txtOPHigh.Text,v.Screen.fmJobRpt!txtOPLow.Text,v.Local.fDiff)
+f.Intrinsic.Math.Div(v.Local.fDiff,2,v.Local.fDiff)
+f.Intrinsic.Math.Add(v.Screen.fmJobRpt!txtOPLow.Text,v.Local.fDiff,v.Local.fValue)
+f.Intrinsic.Math.Floor(v.Local.fValue,v.Local.iMean)
+
+gui.fmJobRpt.txtOPCycle.Text(v.Local.iMean)
+
+f.Intrinsic.Control.EndIf
+Program.Sub.txtOPLow_LostFocus.End
+
+Program.Sub.txtOPHigh_LostFocus.Start
+'CALCULATE AND POPULATE MEAN VALUE FOR OPCYCLE WHEN FOCUS IS LOST
+v.Local.fDiff.Declare
+v.Local.fValue.Declare
+v.Local.iMean.Declare
+
+f.Intrinsic.Control.If(v.Screen.fmJobRpt!txtOPLow.Text,<>,"",and,v.Screen.fmJobRpt!txtOPHigh.Text,<>,"")
+
+f.Intrinsic.Math.Sub(v.Screen.fmJobRpt!txtOPHigh.Text,v.Screen.fmJobRpt!txtOPLow.Text,v.Local.fDiff)
+f.Intrinsic.Math.Div(v.Local.fDiff,2,v.Local.fDiff)
+f.Intrinsic.Math.Add(v.Screen.fmJobRpt!txtOPLow.Text,v.Local.fDiff,v.Local.fValue)
+f.Intrinsic.Math.Floor(v.Local.fValue,v.Local.iMean)
+
+gui.fmJobRpt.txtOPCycle.Text(v.Local.iMean)
+
+f.Intrinsic.Control.EndIf
+Program.Sub.txtOPHigh_LostFocus.End
+
+
+
+
